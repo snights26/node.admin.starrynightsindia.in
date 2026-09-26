@@ -1,0 +1,323 @@
+/* PAGE */
+
+.payments-page {
+  min-height: 100vh;
+  background: #0b0b0b;
+  padding: 25px 50px;   /* compact */
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+
+.payments-search {
+  width: min(100%, 420px);
+  min-height: 42px;
+}
+
+
+/* HEADER */
+
+.payments-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 8px;
+}
+
+.payments-header h1 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #e50914;
+  margin: 0;
+}
+
+.payments-header p {
+  color: #aaa;
+  font-size: 12px;
+  margin: 0;
+}
+
+
+/* ACTIONS */
+
+.payments-actions {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+
+/* ADD BUTTON */
+
+.add-payment-btn {
+  padding: 7px 16px;
+  border-radius: 5px;
+  border: none;
+  font-size: 12px;
+  background: #e50914;
+  color: white;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.add-payment-btn:hover {
+  background: #ff1f1f;
+}
+
+
+/* CARD */
+
+.payments-card {
+  background: #141414;
+  border-radius: 8px;
+  padding: 14px;
+  border: 1px solid #222;
+  overflow: hidden;
+}
+
+
+/* TABLE */
+
+.payments-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+
+/* HEADER */
+
+.payments-table th {
+  text-align: left;
+  padding: 10px 8px;
+  color: #999;
+  font-weight: 500;
+  font-size: 11px;
+  border-bottom: 1px solid #222;
+  text-transform: uppercase;
+}
+
+
+/* ROWS */
+
+.payments-table td {
+  padding: 10px 8px;
+  border-bottom: 1px solid #1f1f1f;
+  font-size: 12px;
+}
+
+
+/* HOVER */
+
+.payments-table tbody tr:hover {
+  background: #1a1a1a;
+}
+
+
+/* STATUS */
+
+.status {
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.status.pending {
+  background: rgba(229, 9, 20, 0.15);
+  color: #ff4d4d;
+}
+
+.status.paid {
+  background: rgba(0, 255, 150, 0.12);
+  color: #00ffae;
+}
+
+.payment-mode,
+.payment-status {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .03em;
+}
+
+.payment-mode--razorpay { background: rgba(56, 189, 248, .16); color: #7dd3fc; }
+.payment-mode--cash { background: rgba(167, 139, 250, .16); color: #c4b5fd; }
+.payment-status--paid { background: rgba(0, 255, 150, .12); color: #00ffae; }
+.payment-status--pending { background: rgba(245, 158, 11, .16); color: #fbbf24; }
+.payment-status--expired,
+.payment-status--cancelled,
+.payment-status--failed { background: rgba(229, 9, 20, .15); color: #ff7070; }
+
+
+/* BUTTONS */
+
+.invoice-btn {
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: none;
+  font-size: 11px;
+  background: #e50914;
+  color: white;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.invoice-btn:hover {
+  background: #ff1f1f;
+}
+
+.delete-btn {
+  margin-left: 6px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: none;
+  font-size: 11px;
+  background: #222;
+  color: #ccc;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.delete-btn:hover {
+  background: #ff1f1f;
+  color: white;
+}
+
+.payments-error {
+  margin: 0 0 14px;
+  padding: 10px 12px;
+  border: 1px solid rgba(229, 9, 20, .55);
+  border-radius: 8px;
+  background: rgba(229, 9, 20, .12);
+  color: #ffd4d4;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.payments-table__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  min-width: 220px;
+}
+
+.payments-table__actions button,
+.payment-list-secondary {
+  padding: 5px 8px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  background: #242424;
+  color: #f4f4f4;
+  cursor: pointer;
+  font: inherit;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.payments-table__actions button:hover,
+.payment-list-secondary:hover { border-color: #e50914; }
+.payments-table__actions button:disabled { cursor: wait; opacity: .6; }
+.payment-provider-detail { color: #9ca3af; font-size: 10px; font-weight: 700; }
+
+
+/* BACK BUTTON */
+
+.payments-topbar {
+  margin-top: 20px;
+}
+
+.back-btn {
+  padding: 6px 12px;
+  font-size: 12px;
+  border: none;
+  background: #1f1f1f;
+  color: #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.back-btn:hover {
+  background: #e50914;
+  color: white;
+}
+
+
+
+/* ================================= */
+/* 📱 MOBILE RESPONSIVE */
+/* ================================= */
+
+@media (max-width:768px){
+
+  .payments-page {
+    padding: 15px 10px;
+  }
+
+  /* HEADER STACK */
+  .payments-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .payments-header h1 {
+    font-size: 18px;
+  }
+
+  .payments-header p {
+    font-size: 11px;
+  }
+
+  /* ADD BUTTON FULL WIDTH */
+  .payments-actions {
+    justify-content: stretch;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .add-payment-btn {
+    width: 100%;
+    text-align: center;
+    padding: 8px;
+    font-size: 11px;
+  }
+
+  /* TABLE SCROLL */
+  .payments-card {
+    overflow-x: auto;
+  }
+
+  .payments-table {
+    min-width: 600px;
+  }
+
+  /* TEXT SMALL */
+  .payments-table th,
+  .payments-table td {
+    font-size: 11px;
+    padding: 8px;
+  }
+
+  /* BUTTONS */
+  .invoice-btn,
+  .delete-btn {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+
+  /* BACK BUTTON CENTER */
+  .payments-topbar {
+    display: flex;
+    justify-content: center;
+  }
+
+  .back-btn {
+    width: 100%;
+    max-width: 180px;
+  }
+}

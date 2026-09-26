@@ -1,0 +1,42 @@
+.addpkg-container {
+  background: #0f0f0f;
+  min-height: 100vh;
+  padding: 20px;
+  color: #fff;
+}
+
+/* HEADER */
+.addpkg-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.addpkg-header h2 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* BACK BUTTON */
+.addpkg-back-btn {
+  background: transparent;
+  border: 1px solid #e50914;
+  color: #e50914;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.addpkg-back-btn:hover {
+  background: #e50914;
+  color: #fff;
+}
+
+/* FORM WRAPPER */
+.addpkg-form-wrapper {
+  background: #181818;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #2a2a2a;
+}

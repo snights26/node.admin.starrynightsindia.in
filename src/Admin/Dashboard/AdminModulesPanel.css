@@ -1,0 +1,122 @@
+.amp-wrapper {
+  background: var(--app-card);
+  padding: 14px;
+  border-radius: 14px;
+  color: var(--app-text);
+  border: 1px solid var(--app-border);
+  box-shadow: var(--app-shadow);
+  min-height: 0;
+  height: auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+}
+
+.amp-header {
+  margin-bottom: 12px;
+  flex: 0 0 auto;
+}
+
+.amp-header h3 {
+  margin: 0;
+  font-size: 15px;
+  color: var(--app-text);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  font-weight: 800;
+}
+
+.amp-header span {
+  font-size: 12px;
+  color: var(--app-text-muted);
+  display: block;
+  margin-top: 3px;
+  line-height: 1.45;
+}
+
+.amp-section {
+  margin-bottom: 10px;
+  flex: 0 0 auto;
+}
+
+.amp-section-title {
+  font-size: 13px;
+  text-transform: uppercase;
+  color: var(--app-text-muted);
+  margin-bottom: 6px;
+  letter-spacing: 0.6px;
+  font-weight: 700;
+}
+
+.amp-list {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.amp-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--app-card-soft);
+  color: var(--app-text);
+  border: 1px solid var(--app-border);
+  min-height: 36px;
+  padding: 7px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.amp-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  background: var(--app-accent);
+  transition: width 0.2s ease;
+}
+
+.amp-dot {
+  width: 5px;
+  height: 5px;
+  background: var(--app-accent);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px var(--app-accent-soft);
+  position: relative;
+  z-index: 1;
+  flex: 0 0 auto;
+}
+
+.amp-item-label {
+  color: inherit;
+  position: relative;
+  z-index: 1;
+}
+
+.amp-item:hover {
+  transform: translateX(3px);
+  background: var(--app-accent-soft);
+  border-color: var(--app-accent);
+  color: var(--app-accent-strong);
+}
+
+.amp-item:hover::before {
+  width: 3px;
+}
+
+.amp-item:hover .amp-dot {
+  background: var(--app-accent-hover);
+  box-shadow: 0 0 0 4px var(--app-accent-soft);
+}
+
+.amp-item:active {
+  transform: scale(0.97);
+}

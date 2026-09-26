@@ -1,0 +1,309 @@
+.ul-page {
+  background: #000;
+  min-height: 100vh;
+  padding: 26px; /* 40 → 26 */
+  color: white;
+}
+
+/* HEADER */
+.ul-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px; /* 25 → 16 */
+}
+
+.ul-header h2 {
+  color: #e50914;
+  font-size: 20px; /* add control */
+}
+
+.ul-header p {
+  margin: 4px 0 0;
+  color: #a9a9a9;
+  font-size: 12px;
+}
+
+.ul-feedback {
+  margin: 0 0 16px;
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.ul-feedback.success {
+  background: rgba(19, 105, 57, 0.25);
+  border-color: #208f53;
+  color: #ceffe1;
+}
+
+.ul-feedback.error {
+  background: rgba(167, 24, 24, 0.22);
+  border-color: #d73333;
+  color: #ffd0d0;
+}
+
+.ul-header button {
+  margin-left: 6px; /* 10 → 6 */
+  background: #1c1c1c;
+  border: 1px solid #333;
+  color: white;
+  padding: 5px 10px; /* smaller */
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+.ul-header button:hover {
+  background: #e50914;
+}
+
+/* TABLE BOX */
+.ul-table-box {
+  background: #111;
+  border-radius: 8px; /* 12 → 8 */
+  overflow: hidden;
+  border: 1px solid #222;
+  box-shadow: 0 0 18px rgba(229, 9, 20, 0.08);
+}
+
+/* TABLE */
+.ul-table-box table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px; /* compact */
+}
+
+.ul-table-box th {
+  background: #0d0d0d;
+  color: #aaa;
+  padding: 10px; /* 14 → 10 */
+  text-align: left;
+  font-size: 12px;
+}
+
+.ul-table-box td {
+  padding: 10px; /* 14 → 10 */
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.ul-table-box tr:hover {
+  background: rgba(229, 9, 20, 0.05);
+}
+
+/* TAGS */
+.tag {
+  padding: 3px 8px;
+  border-radius: 14px;
+  font-size: 10px;
+}
+
+.tag.regular {
+  background: #333;
+}
+
+.tag.vip {
+  background: gold;
+  color: black;
+}
+
+.tag.agent {
+  background: #2196f3;
+}
+
+.tag.corporate {
+  background: purple;
+}
+
+/* ACTIONS */
+.actions button {
+  margin-right: 5px;
+  padding: 4px 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 11px;
+}
+
+.actions button:first-child {
+  background: #2196f3;
+  color: white;
+}
+
+.actions .danger {
+  background: #e50914;
+  color: white;
+}
+
+/* POPUP */
+.ul-popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.ul-popup-box {
+  background: #111;
+  padding: 20px; /* 30 → 20 */
+  border-radius: 8px;
+  text-align: center;
+  width: min(92vw, 390px);
+}
+
+.ul-popup-box h3 {
+  color: #fff;
+}
+
+.ul-popup-box p {
+  line-height: 1.45;
+}
+
+.ul-delete-warning {
+  color: #e4b3b3;
+  font-size: 12px;
+}
+
+.ul-modal-error {
+  color: #ffb4b4;
+  font-size: 12px;
+}
+
+.ul-popup-actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+}
+
+.ul-popup-actions button {
+  padding: 6px 12px;
+  border: none;
+  font-size: 12px;
+}
+
+.ul-popup-actions .danger {
+  background: #e50914;
+  color: white;
+}
+
+.ul-popup-actions button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.ul-empty {
+  color: #aaa;
+  padding: 24px !important;
+  text-align: center;
+}
+
+/* SEARCH */
+.ul-search {
+  padding: 6px 10px;
+  background: #0d0d0d;
+  border: 1px solid #333;
+  color: white;
+  border-radius: 5px;
+  margin-right: 6px;
+  font-size: 12px;
+}
+
+
+/* ============================= */
+/* MOBILE (≤ 768px) */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+  .ul-page {
+    padding: 16px;
+  }
+
+  /* HEADER STACK */
+  .ul-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .ul-header h2 {
+    font-size: 18px;
+  }
+
+  .ul-header div {
+    width: 100%;
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .ul-search {
+    flex: 1;
+    min-width: 140px;
+  }
+
+  /* TABLE SCROLL */
+  .ul-table-box {
+    overflow-x: auto;
+  }
+
+  .ul-table-box table {
+    min-width: 700px; /* horizontal scroll */
+  }
+
+  /* SMALLER TEXT */
+  .ul-table-box th,
+  .ul-table-box td {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  /* ACTION BUTTONS STACK */
+  .actions {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .actions button {
+    width: 100%;
+    font-size: 11px;
+    padding: 5px;
+  }
+
+  /* POPUP */
+  .ul-popup-box {
+    width: 90%;
+    padding: 16px;
+  }
+}
+
+
+/* ============================= */
+/* EXTRA SMALL (≤ 480px) */
+/* ============================= */
+
+@media (max-width: 480px) {
+
+  .ul-header h2 {
+    font-size: 16px;
+  }
+
+  .ul-search {
+    width: 100%;
+  }
+
+  .ul-header button {
+    flex: 1;
+    font-size: 11px;
+    padding: 5px;
+  }
+
+  .ul-table-box table {
+    min-width: 600px;
+  }
+
+}

@@ -1,0 +1,144 @@
+/* PAGE */
+.keyword-form-page {
+  background: radial-gradient(circle at top, #0f0f0f 0%, #000 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CARD */
+.keyword-form-card {
+  width: 420px;
+  padding: 30px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 
+    0 10px 40px rgba(0,0,0,0.8),
+    0 0 20px rgba(229,9,20,0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* TITLE */
+.keyword-form-title {
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+  background: linear-gradient(90deg, #ff2a3d, #ff6a00);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* FORM GROUP */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 13px;
+  color: #aaa;
+}
+
+/* INPUTS */
+.keyword-form-card input,
+.keyword-form-card textarea {
+  padding: 10px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid #333;
+  color: white;
+  font-size: 13px;
+  transition: 0.3s;
+}
+
+.keyword-form-card input:focus,
+.keyword-form-card textarea:focus {
+  outline: none;
+  border-color: #e50914;
+  box-shadow: 0 0 10px rgba(229,9,20,0.4);
+}
+
+/* TEXTAREA HEIGHT */
+textarea {
+  min-height: 70px;
+  resize: none;
+}
+
+/* ACTION BUTTONS */
+.keyword-form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.submit-btn {
+  flex: 1;
+  background: linear-gradient(90deg, #e50914, #ff4b2b);
+  border: none;
+  padding: 12px;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(229,9,20,0.5);
+}
+
+.back-btn {
+  flex: 1;
+  background: rgba(255,255,255,0.05);
+  border: none;
+  padding: 12px;
+  color: #ccc;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.back-btn:hover {
+  background: rgba(255,255,255,0.1);
+  color: white;
+}
+
+/* POPUP */
+.keyword-popup {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 12px 18px;
+  border-radius: 10px;
+  background: rgba(20,20,20,0.95);
+  color: white;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.1);
+  animation: slideIn 0.4s ease;
+}
+
+.keyword-popup.success {
+  border-left: 4px solid #00ffae;
+}
+
+.keyword-popup.error {
+  border-left: 4px solid #ff3b3b;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(120px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

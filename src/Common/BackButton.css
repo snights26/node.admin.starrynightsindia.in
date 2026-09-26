@@ -1,0 +1,2 @@
+.admin-back-button { display:inline-flex; align-items:center; justify-content:center; gap:8px; min-height:40px; padding:0 15px; border:1px solid var(--app-border, #3b3b3b); border-radius:10px; background:var(--app-card, #242424); color:var(--app-text, #fff); font:inherit; font-weight:700; cursor:pointer; white-space:nowrap; }
+.admin-back-button:hover, .admin-back-button:focus-visible { border-color:#ef1325; color:#ef1325; outline:none; }

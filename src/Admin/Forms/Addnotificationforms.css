@@ -1,0 +1,293 @@
+/* PAGE */
+
+.notification-form-page {
+  background: #0b0b0b;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  padding: 20px;
+}
+
+
+/* CARD */
+
+.notification-form-card {
+  background: #141414;
+
+  width: 100%;
+  max-width: 380px;
+
+  padding: 22px;
+
+  border-radius: 8px;
+  border: 1px solid #1f1f1f;
+
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+
+  box-shadow:
+    0 6px 20px rgba(0,0,0,0.55),
+    0 0 10px rgba(229,9,20,0.08);
+}
+
+
+/* TITLE */
+
+.notification-form-title {
+  color: #e50914;
+  font-size: 17px;
+  font-weight: 600;
+
+  margin-bottom: 4px;
+  letter-spacing: 0.2px;
+}
+
+
+/* TABS */
+
+.tabs {
+  display: flex;
+  border-bottom: 1px solid #1d1d1d;
+  margin-bottom: 2px;
+}
+
+.tab {
+  flex: 1;
+  text-align: center;
+
+  padding: 9px 6px;
+
+  font-size: 12px;
+  color: #777;
+
+  cursor: pointer;
+  transition: 0.2s;
+  position: relative;
+}
+
+.tab:hover {
+  color: #fff;
+}
+
+.tab.active {
+  color: #fff;
+  font-weight: 500;
+}
+
+.tab.active::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 25%;
+
+  width: 50%;
+  height: 2px;
+
+  background: #e50914;
+}
+
+
+/* INPUTS */
+
+.notification-form-card input,
+.notification-form-card textarea,
+.notification-form-card select {
+  width: 100%;
+
+  padding: 9px 10px;
+
+  background: #101010;
+
+  border: 1px solid #262626;
+  border-radius: 5px;
+
+  color: #d4d4d4;
+
+  font-size: 13px;
+  font-family: inherit;
+
+  transition: 0.2s;
+
+  box-sizing: border-box;
+}
+
+
+/* FOCUS */
+
+.notification-form-card input:focus,
+.notification-form-card textarea:focus,
+.notification-form-card select:focus {
+  border-color: #e50914;
+  outline: none;
+  background: #0d0d0d;
+  color: white;
+}
+
+
+/* TEXTAREA */
+
+.notification-form-card textarea {
+  min-height: 85px;
+  resize: none;
+}
+
+
+/* SELECT */
+
+.notification-form-card select {
+  cursor: pointer;
+}
+
+
+/* USER PREVIEW */
+
+.user-preview {
+  background: #101010;
+  border: 1px solid #222;
+
+  padding: 8px 10px;
+
+  border-radius: 5px;
+
+  color: #d2d2d2;
+  font-size: 12px;
+}
+
+
+/* FILE */
+
+.file-upload {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.file-upload label {
+  font-size: 11px;
+  color: #888;
+}
+
+.file-upload input {
+  padding: 7px;
+  background: #101010;
+  border: 1px dashed #2c2c2c;
+  color: #999;
+  cursor: pointer;
+}
+
+.file-upload input:hover {
+  border-color: #e50914;
+  color: white;
+}
+
+
+/* ACTIONS */
+
+.notification-form-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+
+/* BUTTON */
+
+.notification-form-actions button {
+  flex: 1;
+
+  padding: 9px;
+
+  border: none;
+  border-radius: 5px;
+
+  cursor: pointer;
+
+  font-size: 12px;
+  font-weight: 500;
+
+  transition: 0.2s;
+}
+
+
+/* SUBMIT */
+
+.notification-form-actions button:first-child {
+  background: #e50914;
+  color: white;
+}
+
+.notification-form-actions button:first-child:hover {
+  background: #ff2020;
+}
+
+
+/* BACK */
+
+.notification-form-actions button:last-child {
+  background: #1a1a1a;
+  color: #cfcfcf;
+  border: 1px solid #2d2d2d;
+}
+
+.notification-form-actions button:last-child:hover {
+  background: #252525;
+  color: white;
+}
+
+
+/* POPUP */
+
+.notification-popup {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+
+  background: #141414;
+  color: white;
+
+  padding: 10px 14px;
+
+  border-radius: 5px;
+  border-left: 3px solid #e50914;
+
+  box-shadow: 0 4px 14px rgba(0,0,0,0.45);
+
+  font-size: 12px;
+
+  animation: slideIn 0.25s ease;
+}
+
+
+/* ANIMATION */
+
+@keyframes slideIn {
+  from {
+    transform: translateX(80px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  .notification-form-page {
+    padding: 14px;
+    align-items: flex-start;
+  }
+
+  .notification-form-card {
+    max-width: 100%;
+    padding: 18px;
+    margin-top: 20px;
+  }
+
+}

@@ -1,0 +1,337 @@
+/* =========================
+   PAGE
+========================= */
+
+.unanswered-page {
+  min-height: 100vh;
+  padding: 24px;
+  background: radial-gradient(circle at top, #0f0f0f 0%, #000 100%);
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+.unanswered-search {
+  display: block;
+  width: min(100%, 420px);
+  margin: 0 0 16px auto;
+}
+
+.unanswered-empty,
+.keywords-empty,
+.sb-empty {
+  padding: 28px;
+  text-align: center;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.unanswered-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+}
+
+.unanswered-title {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+
+  background: linear-gradient(90deg, #ff2a3d, #ff6a00);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+.unanswered-back-btn {
+  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.05);
+
+  color: #d2d2d2;
+  padding: 10px 15px;
+
+  border-radius: 10px;
+  cursor: pointer;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  transition: 0.25s ease;
+}
+
+.unanswered-back-btn:hover {
+  background: rgba(255,255,255,0.09);
+  color: #fff;
+}
+
+/* =========================
+   TABLE WRAPPER
+========================= */
+
+.unanswered-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+
+  border-radius: 16px;
+
+  backdrop-filter: blur(8px);
+
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+}
+
+/* =========================
+   TABLE
+========================= */
+
+.unanswered-table {
+  width: 100%;
+  min-width: 850px;
+  border-collapse: collapse;
+}
+
+.unanswered-table thead {
+  background: rgba(255,255,255,0.03);
+}
+
+.unanswered-table th {
+  padding: 16px;
+  text-align: left;
+
+  color: #9f9f9f;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.unanswered-table td {
+  padding: 16px;
+  vertical-align: top;
+
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+/* =========================
+   ROWS
+========================= */
+
+.unanswered-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.unanswered-table tbody tr:hover {
+  background: rgba(255,255,255,0.025);
+}
+
+/* =========================
+   QUESTION
+========================= */
+
+.question-text {
+  color: #dddddd;
+  font-size: 14px;
+  line-height: 1.6;
+  max-width: 250px;
+}
+
+/* =========================
+   ID
+========================= */
+
+.qid {
+  color: #ff5c3d;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/* =========================
+   TEXTAREA
+========================= */
+
+.unanswered-input {
+  width: 100%;
+  min-height: 85px;
+  resize: vertical;
+
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+
+  border-radius: 12px;
+
+  padding: 12px;
+  color: white;
+
+  font-size: 13px;
+  line-height: 1.6;
+
+  transition: 0.25s ease;
+  box-sizing: border-box;
+}
+
+.unanswered-input::placeholder {
+  color: #888;
+}
+
+.unanswered-input:focus {
+  outline: none;
+  border-color: rgba(229, 9, 20, 0.7);
+  background: rgba(255,255,255,0.05);
+
+  box-shadow: 0 0 0 3px rgba(229, 9, 20, 0.12);
+}
+
+/* =========================
+   ACTIONS
+========================= */
+
+.unanswered-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* SAVE BUTTON */
+
+.unanswered-submit {
+  border: none;
+  cursor: pointer;
+
+  padding: 9px 15px;
+  border-radius: 10px;
+
+  color: white;
+  font-size: 13px;
+  font-weight: 500;
+
+  background: linear-gradient(90deg, #e50914, #ff4b2b);
+
+  transition: 0.25s ease;
+}
+
+.unanswered-submit:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(229, 9, 20, 0.25);
+}
+
+/* REMOVE BUTTON */
+
+.unanswered-remove {
+  border: 1px solid rgba(255,255,255,0.05);
+
+  background: rgba(255,255,255,0.06);
+  color: #d0d0d0;
+
+  padding: 9px 15px;
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  transition: 0.25s ease;
+}
+
+.unanswered-remove:hover {
+  background: rgba(255,255,255,0.1);
+  color: white;
+}
+
+/* =========================
+   POPUP
+========================= */
+
+.unanswered-popup {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 999;
+
+  padding: 12px 18px;
+  border-radius: 12px;
+
+  background: rgba(15,15,15,0.92);
+  color: white;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  border: 1px solid rgba(255,255,255,0.06);
+
+  backdrop-filter: blur(10px);
+
+  animation: popupSlide 0.3s ease;
+}
+
+.unanswered-popup.success {
+  border-left: 3px solid #00ffae;
+}
+
+.unanswered-popup.error {
+  border-left: 3px solid #ff4d4d;
+}
+
+@keyframes popupSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+.unanswered-table-wrapper::-webkit-scrollbar {
+  height: 7px;
+}
+
+.unanswered-table-wrapper::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.12);
+  border-radius: 20px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .unanswered-page {
+    padding: 16px;
+  }
+
+  .unanswered-title {
+    font-size: 20px;
+  }
+
+  .unanswered-back-btn {
+    width: 100%;
+  }
+
+  .unanswered-popup {
+    left: 14px;
+    right: 14px;
+    top: 14px;
+
+    text-align: center;
+  }
+}

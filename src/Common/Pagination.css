@@ -1,0 +1,6 @@
+.admin-pagination { display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:flex-end; padding:18px 0 0; color:var(--app-muted, #aeb7c6); font-size:.9rem; }
+.admin-pagination > span { margin-right:auto; font-weight:700; }
+.admin-pagination button { min-width:82px; padding:9px 14px; border:1px solid var(--app-border, #3a3a3a); border-radius:9px; background:var(--app-card, #1c1c1c); color:var(--app-text, #fff); font:inherit; font-weight:700; cursor:pointer; }
+.admin-pagination button:not(:disabled):hover, .admin-pagination button:not(:disabled):focus-visible { border-color:#ef1325; color:#ef1325; outline:none; }
+.admin-pagination button:disabled { opacity:.45; cursor:not-allowed; }
+@media (max-width:600px) { .admin-pagination { justify-content:center; } .admin-pagination > span { width:100%; margin-right:0; text-align:center; } }

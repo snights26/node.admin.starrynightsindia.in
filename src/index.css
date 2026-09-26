@@ -1,0 +1,198 @@
+/* ================= ROOT VARIABLES ================= */
+:root {
+  --text: #f8fafc;
+  --text-h: #f8fafc;
+  --bg: #050505;
+  --border: rgba(255,255,255,0.12);
+  --accent: #e50914;
+  --app-bg: #050505;
+  --app-surface: #111111;
+  --app-card: #181818;
+  --app-card-soft: #232323;
+  --app-text: #f8fafc;
+  --app-text-muted: #b3b3b3;
+  --app-border: rgba(255,255,255,0.12);
+  --app-accent: #e50914;
+  --app-accent-hover: #ff1f2d;
+  --app-accent-strong: #b20710;
+  --app-accent-soft: rgba(229,9,20,0.16);
+  --app-input: #0d0d0d;
+  --app-input-border: rgba(255,255,255,0.16);
+  --app-shadow: 0 18px 48px rgba(0,0,0,0.58);
+  --app-page-gradient: radial-gradient(circle at top left, rgba(229,9,20,0.10), transparent 34rem), linear-gradient(180deg, #050505, #0d0d0d);
+  --app-surface-gradient: linear-gradient(180deg, #1b1b1b, #111111);
+  --app-nav-bg: rgba(5,5,5,0.94);
+  --app-overlay: rgba(0,0,0,0.72);
+  --app-success: #22c55e;
+  --app-warning: #f59e0b;
+  --app-danger: #ef4444;
+  --app-info: #38bdf8;
+  --app-link: #f8fafc;
+  --app-link-hover: #ffffff;
+  --app-focus: 0 0 0 3px rgba(229,9,20,0.26);
+  --accent-bg: rgba(229,9,20,0.16);
+  --accent-border: rgba(229,9,20,0.38);
+  --social-bg: #181818;
+  --shadow: 0 18px 48px rgba(0,0,0,0.58);
+
+  --sans: system-ui, "Segoe UI", Roboto, sans-serif;
+  --heading: system-ui, "Segoe UI", Roboto, sans-serif;
+}
+
+/* ================= GLOBAL FONT CONTROL ================= */
+/* 🔥 Main fix for zoom-feel */
+html {
+  font-size: 15px;            /* 16 → 15 (balanced compact look) */
+  -webkit-text-size-adjust: 100%;
+}
+
+/* ================= RESET ================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  font-family: var(--sans);
+  line-height: 1.45;
+
+  background: var(--app-bg);
+  color: var(--app-text);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  min-height: 100%;
+  background: var(--app-bg);
+}
+
+/* ================= ROOT LAYOUT ================= */
+#root {
+  width: 100%;
+  min-height: 100dvh;   /* 🔥 better than 100vh */
+  display: flex;
+  flex-direction: column;
+  background: var(--app-bg);
+}
+
+/* ================= TYPOGRAPHY ================= */
+h1,
+h2 {
+  font-family: var(--heading);
+  font-weight: 500;
+  color: var(--app-text);
+  margin: 0;
+}
+
+h1 {
+  font-size: 1.6rem;   /* scalable */
+}
+
+h2 {
+  font-size: 1.3rem;
+}
+
+p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--app-text-muted);
+}
+
+/* ================= LINKS ================= */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ================= BUTTON RESET ================= */
+button {
+  font-family: inherit;
+}
+
+/* ================= INPUT RESET ================= */
+input,
+textarea {
+  font-family: inherit;
+}
+
+/* ================= SCROLLBAR ================= */
+/* Keep scroll areas discoverable and usable. Previous global rules hid every
+   scrollbar, including the Admin dashboard's nested panels. */
+html,
+body,
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--app-accent) var(--app-card-soft);
+}
+
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--app-card-soft);
+}
+
+::-webkit-scrollbar-thumb {
+  border: 2px solid var(--app-card-soft);
+  border-radius: 999px;
+  background: var(--app-accent);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--app-accent-hover);
+}
+
+[data-theme="light"] body {
+  background: var(--app-page-gradient);
+}
+
+[data-theme="light"] .dashboard-page,
+[data-theme="light"] .admin-page,
+[data-theme="light"] .list-page,
+[data-theme="light"] .form-page,
+[data-theme="light"] .login-page {
+  background: var(--app-bg);
+  color: var(--app-text);
+}
+
+[data-theme="light"] .dashboard-card,
+[data-theme="light"] .login-card,
+[data-theme="light"] .admin-card,
+[data-theme="light"] .form-card,
+[data-theme="light"] .session-box,
+[data-theme="light"] table,
+[data-theme="light"] .card {
+  background: var(--app-card);
+  color: var(--app-text);
+  border-color: var(--app-border);
+  box-shadow: var(--app-shadow);
+}
+
+[data-theme="light"] input,
+[data-theme="light"] textarea,
+[data-theme="light"] select {
+  background: var(--app-input);
+  color: var(--app-text);
+  border-color: var(--app-border);
+}
+
+/* ================= CODE (SAFE KEEP) ================= */
+code {
+  font-family: monospace;
+}
+
+/* ================= MOBILE TWEAK ================= */
+@media (max-width: 768px) {
+  html {
+    font-size: 14.5px;  /* slightly tighter on mobile */
+  }
+}

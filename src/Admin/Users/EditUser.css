@@ -1,0 +1,214 @@
+
+/* PAGE */
+.eu-page {
+  background: radial-gradient(circle at top, #0a0a0a, #000);
+  min-height: 100vh;
+  padding: 32px 14px; /* 50 → 32 | 20 → 14 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CARD */
+.eu-card {
+  width: 100%;
+  max-width: 720px; /* 1050 → 720 */
+  background: rgba(20, 20, 20, 0.85);
+  backdrop-filter: blur(14px);
+  padding: 24px; /* 35 → 24 */
+  border-radius: 12px; /* 18 → 12 */
+  border: 1px solid rgba(255, 0, 0, 0.15);
+  box-shadow:
+    0 0 28px rgba(229, 9, 20, 0.15),
+    0 0 55px rgba(229, 9, 20, 0.05);
+  transition: 0.3s ease;
+}
+
+.eu-card:hover {
+  box-shadow:
+    0 0 42px rgba(229, 9, 20, 0.25),
+    0 0 85px rgba(229, 9, 20, 0.1);
+}
+
+/* HEADER */
+.eu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px; /* 30 → 20 */
+}
+
+.eu-header h2 {
+  color: #fff;
+  font-size: 18px; /* 26 → 18 */
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.eu-header button {
+  background: transparent;
+  border: 1px solid #333;
+  color: #bbb;
+  padding: 6px 11px; /* 8x16 → 6x11 */
+  border-radius: 20px;
+  transition: 0.3s;
+  font-size: 12px;
+}
+
+.eu-header button:hover {
+  border-color: #e50914;
+  color: #fff;
+  box-shadow: 0 0 10px #e50914;
+}
+
+/* SECTION */
+.eu-section {
+  margin-bottom: 24px; /* 35 → 24 */
+}
+
+.eu-section h3 {
+  color: #e50914;
+  margin-bottom: 8px; /* 12 → 8 */
+  font-size: 11px; /* 15 → 11 */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* GRID */
+.eu-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 11px; /* 16 → 11 */
+}
+
+/* INPUT */
+.eu-page input {
+  width: 100%;
+  padding: 8px; /* 12 → 8 */
+  background: #0c0c0c;
+  border: 1px solid #222;
+  color: #eee;
+  border-radius: 6px;
+  transition: 0.3s;
+  font-size: 12px;
+}
+
+.eu-page input:hover {
+  border-color: #444;
+}
+
+.eu-page input:focus {
+  border-color: #e50914;
+  box-shadow: 0 0 8px rgba(229, 9, 20, 0.4);
+}
+
+/* AVATAR */
+.eu-avatar-box {
+  width: 90px;  /* 130 → 90 */
+  height: 90px;
+  margin: 10px auto;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #e50914;
+  box-shadow: 0 0 14px rgba(229, 9, 20, 0.6);
+}
+
+.eu-avatar-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #111;
+  color: #888;
+  font-size: 10px;
+}
+
+/* LIKED */
+.eu-liked-item {
+  background: linear-gradient(135deg, #1a1a1a, #111);
+  padding: 8px; /* 12 → 8 */
+  border-radius: 6px;
+  border: 1px solid #222;
+  transition: 0.3s;
+  font-size: 12px;
+}
+
+.eu-liked-item:hover {
+  transform: translateX(4px); /* 6 → 4 */
+  border-color: #e50914;
+  box-shadow: 0 0 10px rgba(229, 9, 20, 0.4);
+}
+
+/* DELETE BUTTON */
+.eu-delete-btn {
+  width: 100%;
+  padding: 10px; /* 14 → 10 */
+  background: linear-gradient(135deg, #e50914, #b20710);
+  border: none;
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+  margin-top: 14px; /* 20 → 14 */
+  transition: 0.3s;
+  font-size: 13px;
+}
+
+.eu-delete-btn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px rgba(229, 9, 20, 0.6);
+}
+
+/* POPUP */
+.eu-popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.eu-popup-box {
+  background: #111;
+  padding: 24px; /* 35 → 24 */
+  border-radius: 10px;
+  text-align: center;
+  border: 1px solid #222;
+  box-shadow: 0 0 20px rgba(229, 9, 20, 0.3);
+}
+
+.eu-popup-box h3 {
+  color: #e50914;
+  font-size: 16px;
+}
+
+.eu-popup-actions {
+  margin-top: 14px; /* 20 → 14 */
+  display: flex;
+  gap: 8px; /* 12 → 8 */
+  justify-content: center;
+}
+
+.eu-popup-actions button {
+  padding: 7px 13px; /* 10x18 → 7x13 */
+  border-radius: 5px;
+  background: #1c1c1c;
+  color: white;
+  border: none;
+  font-size: 12px;
+}
+
+.eu-popup-actions .danger {
+  background: linear-gradient(135deg, #e50914, #b20710);
+}
+
+.eu-popup-actions button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.eu-delete-error {
+  color: #ffb4b4;
+  font-size: 12px;
+  line-height: 1.45;
+}

@@ -1,0 +1,38 @@
+.administrator-accounts-page { min-height: 100vh; padding: 28px; background: var(--app-page-gradient); color: var(--app-text); }
+.administrator-accounts-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; margin-bottom: 22px; }
+.administrator-accounts-header span, .administrator-accounts-section-heading span { color: #d10c16; font-size: .76rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.administrator-accounts-header h1 { margin: 5px 0 7px; font-size: clamp(1.55rem, 3vw, 2.1rem); }
+.administrator-accounts-header p { max-width: 720px; margin: 0; color: var(--app-text-muted); }
+.administrator-accounts-back, .administrator-accounts-secondary, .administrator-accounts-primary, .administrator-accounts-danger, .administrator-accounts-actions button { display: inline-flex; align-items: center; justify-content: center; gap: 7px; border: 1px solid var(--app-border); border-radius: 6px; padding: 9px 12px; color: var(--app-text); background: var(--app-card-soft); font: inherit; cursor: pointer; }
+.administrator-accounts-back:hover, .administrator-accounts-secondary:hover, .administrator-accounts-actions button:hover { border-color: var(--app-accent); background: var(--app-accent-soft); }
+.administrator-accounts-primary { border-color: var(--app-accent); background: var(--app-accent); color: #fff; font-weight: 700; }
+.administrator-accounts-primary:hover { background: var(--app-accent-strong); border-color: var(--app-accent-strong); }
+.administrator-accounts-danger, .administrator-accounts-delete { border-color: var(--app-danger) !important; color: #fff !important; background: var(--app-danger) !important; }
+.administrator-accounts-danger:hover, .administrator-accounts-delete:hover { filter: brightness(.9); }
+.administrator-accounts-page button:disabled, .administrator-accounts-page select:disabled { cursor: not-allowed; opacity: .55; }
+.administrator-accounts-feedback { margin-bottom: 16px; padding: 11px 13px; border: 1px solid; border-radius: 7px; }
+.administrator-accounts-feedback--success { color: #d6ffe7; background: #123d28; border-color: #267e4a; }
+.administrator-accounts-feedback--error { color: #ffd2d4; background: #451719; border-color: #9e343a; }
+.administrator-accounts-create, .administrator-accounts-list-section { margin-bottom: 18px; padding: 20px; border: 1px solid var(--app-border); border-radius: 10px; background: var(--app-surface-gradient); box-shadow: var(--app-shadow); }
+.administrator-accounts-section-heading { display: flex; align-items: center; gap: 11px; margin-bottom: 18px; }
+.administrator-accounts-section-heading svg { color: #e50914; font-size: 1.2rem; }
+.administrator-accounts-section-heading h2 { margin: 3px 0 0; font-size: 1.15rem; }
+.administrator-accounts-form { display: grid; grid-template-columns: repeat(6, minmax(120px, 1fr)); align-items: end; gap: 13px; }
+.administrator-accounts-form label, .administrator-accounts-modal-form label { display: grid; gap: 6px; color: var(--app-text-muted); font-size: .8rem; font-weight: 700; }
+.administrator-accounts-form input, .administrator-accounts-form select, .administrator-accounts-modal-form input, .administrator-accounts-table-wrap select { min-height: 39px; box-sizing: border-box; border: 1px solid var(--app-input-border); border-radius: 5px; padding: 8px 9px; color: var(--app-text); background: var(--app-input); font: inherit; }
+.administrator-accounts-form input:focus, .administrator-accounts-form select:focus, .administrator-accounts-modal-form input:focus, .administrator-accounts-table-wrap select:focus { outline: 2px solid rgba(229,9,20,.6); outline-offset: 1px; }
+.administrator-accounts-table-wrap { overflow-x: auto; border: 1px solid var(--app-border); border-radius: 8px; }
+.administrator-accounts-table-wrap table { width: 100%; min-width: 850px; border-collapse: collapse; }
+.administrator-accounts-table-wrap th { padding: 11px 12px; color: var(--app-text-muted); background: var(--table-header); text-align: left; font-size: .76rem; letter-spacing: .04em; text-transform: uppercase; }
+.administrator-accounts-table-wrap td { padding: 12px; border-top: 1px solid var(--app-border); color: var(--app-text); vertical-align: middle; }
+.administrator-accounts-table-wrap td strong, .administrator-accounts-table-wrap td span, .administrator-accounts-table-wrap td small { display: block; }
+.administrator-accounts-table-wrap td span, .administrator-accounts-table-wrap td small { margin-top: 3px; color: var(--app-text-muted); }
+.administrator-accounts-table-wrap td small { font-size: .75rem; }
+.administrator-accounts-status { display: inline-block !important; margin: 0 !important; padding: 4px 8px; border-radius: 999px; color: #fff !important; background: var(--app-success); font-size: .75rem; font-weight: 700; }
+.administrator-accounts-actions { display: flex; flex-wrap: wrap; gap: 7px; }
+.administrator-accounts-actions button { padding: 7px 9px; font-size: .78rem; }
+.administrator-accounts-loading, .administrator-accounts-empty { padding: 28px; color: var(--app-text-muted); text-align: center; }
+.administrator-accounts-modal-form p { margin-top: 0; color: var(--app-text); line-height: 1.5; }
+.administrator-accounts-modal-form { display: grid; gap: 14px; }
+@media (max-width: 1180px) { .administrator-accounts-form { grid-template-columns: repeat(3, minmax(150px, 1fr)); } }
+@media (max-width: 720px) { .administrator-accounts-page { padding: 18px 14px; } .administrator-accounts-header { flex-direction: column; } .administrator-accounts-create, .administrator-accounts-list-section { padding: 15px; } .administrator-accounts-form { grid-template-columns: 1fr; } .administrator-accounts-form .administrator-accounts-primary { min-height: 42px; } }

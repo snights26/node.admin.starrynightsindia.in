@@ -1,0 +1,443 @@
+.ulp-page {
+  box-sizing: border-box;
+  min-height: 100vh;
+  padding: 28px;
+  background: var(--app-page-gradient);
+  color: var(--app-text);
+}
+
+.ulp-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+
+.ulp-header > div > span {
+  color: var(--app-accent);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.ulp-header h1 {
+  margin: 6px 0;
+  color: var(--app-text);
+  font-size: 30px;
+  line-height: 1.1;
+}
+
+.ulp-header p {
+  max-width: 720px;
+  margin: 0;
+  color: var(--app-text-muted);
+}
+
+.ulp-back,
+.ulp-reset,
+.ulp-pagination button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 0 14px;
+  border: 1px solid var(--app-border);
+  border-radius: 9px;
+  background: var(--app-card-soft);
+  color: var(--app-text);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 800;
+}
+
+.ulp-back:hover,
+.ulp-reset:hover,
+.ulp-pagination button:not(:disabled):hover {
+  border-color: var(--app-accent);
+  color: var(--app-accent);
+}
+
+.ulp-back:focus-visible,
+.ulp-reset:focus-visible,
+.ulp-pagination button:focus-visible,
+.ulp-package-card:focus-visible {
+  outline: 2px solid var(--app-accent);
+  outline-offset: 2px;
+}
+
+.ulp-toolbar {
+  display: grid;
+  grid-template-columns: minmax(260px, 2fr) minmax(180px, 1fr) minmax(180px, 1fr) auto;
+  align-items: end;
+  gap: 12px;
+  box-sizing: border-box;
+  padding: 16px;
+  margin-bottom: 16px;
+  border: 1px solid var(--app-border);
+  border-radius: 16px;
+  background: var(--app-card);
+  box-shadow: var(--app-shadow);
+}
+
+.ulp-toolbar label {
+  display: grid;
+  min-width: 0;
+  gap: 6px;
+  color: var(--app-text-muted);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.ulp-toolbar label span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ulp-toolbar input,
+.ulp-toolbar select,
+.ulp-pagination select {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  min-height: 40px;
+  padding: 0 11px;
+  border: 1px solid var(--app-border);
+  border-radius: 9px;
+  background: var(--app-input);
+  color: var(--app-text);
+  font: inherit;
+  text-transform: none;
+}
+
+.ulp-insights {
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) minmax(180px, 1fr) minmax(280px, 2fr);
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.ulp-insights > div,
+.ulp-insights > p {
+  box-sizing: border-box;
+  min-height: 94px;
+  margin: 0;
+  border: 1px solid var(--app-border);
+  border-radius: 14px;
+  background: var(--app-card);
+  box-shadow: var(--app-shadow);
+}
+
+.ulp-insights > div {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-content: center;
+  column-gap: 10px;
+  padding: 16px;
+}
+
+.ulp-insights > div > svg {
+  grid-row: span 2;
+  align-self: center;
+  color: var(--app-accent);
+  font-size: 20px;
+}
+
+.ulp-insights span {
+  color: var(--app-text-muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.ulp-insights strong {
+  margin-top: 3px;
+  color: var(--app-text);
+  font-size: 26px;
+  line-height: 1;
+}
+
+.ulp-insights > p {
+  display: flex;
+  align-items: center;
+  padding: 16px 18px;
+  color: var(--app-text-muted);
+  font-weight: 700;
+}
+
+.ulp-list {
+  display: grid;
+  gap: 16px;
+}
+
+.ulp-user-card,
+.ulp-empty,
+.ulp-error {
+  border: 1px solid var(--app-border);
+  border-radius: 16px;
+  background: var(--app-card);
+  box-shadow: var(--app-shadow);
+}
+
+.ulp-user-card {
+  overflow: hidden;
+}
+
+.ulp-empty,
+.ulp-error {
+  padding: 42px 24px;
+  color: var(--app-text-muted);
+  font-weight: 700;
+  text-align: center;
+}
+
+.ulp-error {
+  border-color: var(--app-accent);
+  background: color-mix(in srgb, var(--app-accent) 12%, var(--app-card));
+  color: var(--app-text);
+}
+
+.ulp-user-summary {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 14px;
+  padding: 18px;
+  border-bottom: 1px solid var(--app-border);
+  background: linear-gradient(90deg, color-mix(in srgb, var(--app-accent) 8%, transparent), transparent 48%);
+}
+
+.ulp-avatar {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--app-accent) 55%, transparent);
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--app-accent) 18%, var(--app-card-soft));
+  color: var(--app-accent);
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.ulp-user-identity {
+  min-width: 0;
+}
+
+.ulp-user-identity h2 {
+  margin: 0 0 5px;
+  color: var(--app-text);
+  font-size: 18px;
+}
+
+.ulp-user-identity > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  color: var(--app-text-muted);
+  font-size: 13px;
+}
+
+.ulp-user-identity strong {
+  color: var(--app-text);
+}
+
+.ulp-user-identity span,
+.ulp-user-identity small {
+  overflow-wrap: anywhere;
+}
+
+.ulp-user-identity small {
+  display: block;
+  margin-top: 4px;
+  color: var(--app-text-muted);
+}
+
+.ulp-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 34px;
+  padding: 0 11px;
+  border: 1px solid color-mix(in srgb, var(--app-accent) 32%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--app-accent) 12%, transparent);
+  color: var(--app-accent);
+  font-size: 12px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.ulp-package-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(245px, 1fr));
+  gap: 12px;
+  padding: 16px 18px 18px;
+}
+
+.ulp-package-card {
+  display: grid;
+  grid-template-columns: 66px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid var(--app-border);
+  border-radius: 12px;
+  background: var(--app-card-soft);
+  color: var(--app-text);
+  cursor: pointer;
+  text-align: left;
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.ulp-package-card:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--app-accent) 70%, var(--app-border));
+  box-shadow: 0 12px 26px color-mix(in srgb, var(--app-accent) 16%, transparent);
+}
+
+.ulp-package-media {
+  display: grid;
+  width: 66px;
+  height: 66px;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 9px;
+  background: var(--app-card);
+  color: var(--app-accent);
+  font-weight: 900;
+}
+
+.ulp-package-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ulp-package-details {
+  min-width: 0;
+}
+
+.ulp-package-details strong,
+.ulp-package-details span,
+.ulp-package-details small {
+  display: block;
+}
+
+.ulp-package-details strong {
+  overflow: hidden;
+  color: var(--app-text);
+  font-size: 14px;
+  line-height: 1.3;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ulp-package-details span,
+.ulp-package-details small {
+  margin-top: 4px;
+  color: var(--app-text-muted);
+  font-size: 12px;
+}
+
+.ulp-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 16px 0 4px;
+  color: var(--app-text-muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.ulp-pagination > label {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.ulp-pagination select {
+  width: auto;
+  min-height: 34px;
+}
+
+.ulp-pagination button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+@media (max-width: 1100px) {
+  .ulp-toolbar {
+    grid-template-columns: minmax(260px, 2fr) minmax(180px, 1fr) minmax(180px, 1fr);
+  }
+
+  .ulp-toolbar .ulp-reset {
+    grid-column: 1 / -1;
+    justify-self: end;
+  }
+
+  .ulp-insights {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ulp-insights > p {
+    grid-column: 1 / -1;
+    min-height: auto;
+  }
+}
+
+@media (max-width: 760px) {
+  .ulp-page {
+    padding: 18px 12px;
+  }
+
+  .ulp-header {
+    flex-direction: column;
+  }
+
+  .ulp-back {
+    width: 100%;
+  }
+
+  .ulp-toolbar,
+  .ulp-insights {
+    grid-template-columns: 1fr;
+  }
+
+  .ulp-toolbar .ulp-reset,
+  .ulp-insights > p {
+    grid-column: auto;
+    justify-self: stretch;
+  }
+
+  .ulp-reset {
+    width: 100%;
+  }
+
+  .ulp-user-summary {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .ulp-count {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+
+  .ulp-package-row {
+    grid-template-columns: 1fr;
+    padding: 14px;
+  }
+
+  .ulp-pagination {
+    justify-content: center;
+  }
+}

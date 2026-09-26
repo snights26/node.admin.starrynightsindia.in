@@ -1,0 +1,206 @@
+/* CONTAINER */
+
+.pkg-list-container {
+  background: #0b0b0b;
+  color: white;
+  min-height: 100vh;
+  padding: 25px 50px; /* ↓ reduced */
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+}
+
+.pkg-search {
+  display: block;
+  width: min(100%, 420px);
+  margin: 0 0 16px auto;
+}
+
+
+/* HEADER */
+
+.pkg-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.pkg-header h2 {
+  font-size: 22px; /* ↓ */
+  color: #e50914;
+  margin: 0;
+}
+
+
+/* LEFT GROUP */
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+/* BUTTONS */
+
+.pkg-header button {
+  background: #1f1f1f;
+  border: 1px solid #333;
+  padding: 6px 12px; /* ↓ */
+  color: #ccc;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 12px; /* ↓ */
+  transition: 0.25s;
+}
+
+.pkg-header button:hover {
+  background: #e50914;
+  color: white;
+  border-color: #e50914;
+}
+
+
+/* ADD BUTTON */
+
+.pkg-header button:last-child {
+  background: #e50914;
+  border: none;
+  color: white;
+}
+
+.pkg-header button:last-child:hover {
+  background: #ff1f1f;
+}
+
+
+/* TABLE */
+
+.pkg-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #141414;
+  border-radius: 8px; /* ↓ */
+  overflow: hidden;
+  border: 1px solid #222;
+}
+
+
+/* HEAD */
+
+.pkg-table thead {
+  background: #1a1a1a;
+}
+
+.pkg-table th {
+  text-align: left;
+  padding: 10px; /* ↓ */
+  font-size: 11px;
+  color: #999;
+  border-bottom: 1px solid #222;
+  text-transform: uppercase;
+}
+
+
+/* BODY */
+
+.pkg-table td {
+  padding: 10px; /* ↓ */
+  border-bottom: 1px solid #1f1f1f;
+  font-size: 12px; /* ↓ */
+  color: #ddd;
+}
+
+
+/* ROW HOVER */
+
+.pkg-table tbody tr:hover {
+  background: #1a1a1a;
+}
+
+
+/* ACTION BUTTONS */
+
+.pkg-table button {
+  padding: 5px 10px;
+  margin-right: 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  font-size: 11px;
+  transition: 0.25s;
+}
+
+
+/* EDIT */
+
+.pkg-table button:first-child {
+  background: #1f1f1f;
+  color: #ccc;
+  border: 1px solid #333;
+}
+
+.pkg-table button:first-child:hover {
+  border-color: #e50914;
+  color: #e50914;
+}
+
+
+/* DELETE */
+
+.delete-btn {
+  background: transparent;
+  border: 1px solid #e50914;
+  color: #e50914;
+}
+
+.delete-btn:hover {
+  background: #e50914;
+  color: white;
+}
+
+
+
+/* ================================= */
+/* 📱 MOBILE */
+/* ================================= */
+
+@media (max-width:768px){
+
+  .pkg-list-container {
+    padding: 15px 10px;
+  }
+
+  .pkg-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .pkg-header h2 {
+    font-size: 18px;
+  }
+
+  /* FULL WIDTH ADD BUTTON */
+  .pkg-header button:last-child {
+    width: 100%;
+  }
+
+  /* TABLE SCROLL */
+  .pkg-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .pkg-table th,
+  .pkg-table td {
+    font-size: 11px;
+    padding: 8px;
+  }
+
+  .pkg-table button {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+}

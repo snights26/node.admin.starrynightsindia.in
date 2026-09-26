@@ -1,0 +1,68 @@
+.app-modal__overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000001;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: rgba(0, 0, 0, 0.62);
+}
+
+.app-modal {
+  width: min(560px, 100%);
+  max-height: calc(100vh - 40px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--app-border);
+  border-radius: 8px;
+  background: var(--app-card);
+  color: var(--app-text);
+  box-shadow: var(--app-shadow);
+}
+
+.app-modal__header,
+.app-modal__actions {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px;
+  border-bottom: 1px solid var(--app-border);
+}
+
+.app-modal__close {
+  display: grid;
+  flex: 0 0 auto;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border: 1px solid var(--app-border);
+  border-radius: 7px;
+  background: var(--app-card-soft);
+  color: var(--app-text);
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.app-modal__close:hover,
+.app-modal__close:focus-visible {
+  border-color: var(--app-accent);
+  color: var(--app-accent);
+  outline: none;
+}
+
+.app-modal__actions {
+  justify-content: flex-end;
+  border-top: 1px solid var(--app-border);
+  border-bottom: 0;
+}
+
+.app-modal__body {
+  min-height: 0;
+  padding: 16px;
+}

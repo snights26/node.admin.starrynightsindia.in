@@ -1,0 +1,357 @@
+/* ========================= */
+/* PAGE */
+/* ========================= */
+
+.gallery-form-page {
+  background: var(--app-page-gradient, #0b0b0b);
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 18px;
+
+  font-family: "Poppins", sans-serif;
+}
+
+
+/* ========================= */
+/* CARD */
+/* ========================= */
+
+.gallery-form-card {
+  width: 100%;
+  max-width: 430px;
+
+  background: var(--app-surface-gradient, #131313);
+
+  border: 1px solid var(--app-border, #1f1f1f);
+  border-radius: 14px;
+
+  padding: 24px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+
+  box-shadow: var(--app-shadow, 0 5px 24px rgba(0,0,0,0.45));
+}
+
+
+/* ========================= */
+/* TITLE */
+/* ========================= */
+
+.gallery-form-title {
+  color: var(--app-accent, #e50914);
+
+  font-size: 19px;
+  font-weight: 600;
+
+  margin-bottom: 2px;
+}
+
+.gallery-field-label {
+  color: var(--app-text, #ffffff);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+}
+
+.gallery-field-label span {
+  color: var(--app-accent, #e50914);
+}
+
+
+/* ========================= */
+/* INPUT */
+/* ========================= */
+
+.gallery-input {
+  width: 100%;
+
+  padding: 11px 12px;
+
+  background: var(--app-input, #0f0f0f);
+  color: var(--app-text, #ddd);
+
+  border: 1px solid var(--app-input-border, #272727);
+  border-radius: 8px;
+
+  font-size: 13px;
+  font-family: inherit;
+
+  outline: none;
+  box-sizing: border-box;
+
+  transition: 0.2s ease;
+}
+
+.gallery-input::placeholder {
+  color: var(--app-text-muted, #666);
+}
+
+.gallery-input:focus {
+  border-color: var(--app-accent, #e50914);
+  background: var(--app-input, #101010);
+  color: var(--app-text, #ffffff);
+  box-shadow: var(--app-focus, none);
+}
+
+
+/* ========================= */
+/* CHECKBOX */
+/* ========================= */
+
+.checkbox-row {
+  display: flex;
+  align-items: center;
+
+  color: var(--app-text, #d0d0d0);
+  font-size: 13px;
+}
+
+.checkbox-row label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  cursor: pointer;
+}
+
+.checkbox-row input {
+  accent-color: var(--app-accent, #e50914);
+  cursor: pointer;
+}
+
+.checkbox-row.is-disabled {
+  color: var(--app-text-muted, #8d8d8d);
+  border: 1px dashed var(--app-border, #303030);
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+.gallery-consent-note {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--app-warning, #f59e0b);
+  background: color-mix(in srgb, var(--app-warning, #f59e0b) 14%, transparent);
+  color: var(--app-text, #ffffff);
+  font-size: 12px;
+}
+
+.gallery-consent-note.is-allowed {
+  border-color: var(--app-success, #16a34a);
+  background: color-mix(in srgb, var(--app-success, #16a34a) 14%, transparent);
+}
+
+
+/* ========================= */
+/* UPLOAD BOX */
+/* ========================= */
+
+.upload-box {
+  position: relative;
+
+  border: 1px dashed var(--app-input-border, #303030);
+  border-radius: 10px;
+
+  padding: 18px 14px;
+
+  text-align: center;
+
+  background: var(--app-input, #101010);
+  color: var(--app-text-muted, #8d8d8d);
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+
+  overflow: hidden;
+}
+
+.upload-box:hover {
+  border-color: var(--app-accent, #e50914);
+  background: var(--app-accent-soft, rgba(229,9,20,0.04));
+  color: var(--app-text, #fff);
+}
+
+.upload-box span {
+  font-size: 12px;
+}
+
+.upload-box input {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  opacity: 0;
+
+  cursor: pointer;
+}
+
+
+/* ========================= */
+/* IMAGE PREVIEW */
+/* ========================= */
+
+.image-preview {
+  overflow: hidden;
+
+  border-radius: 10px;
+  border: 1px solid var(--app-border, #222);
+}
+
+.image-preview img {
+  width: 100%;
+  height: 170px;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+
+/* ========================= */
+/* BUTTONS */
+/* ========================= */
+
+.gallery-form-actions {
+  display: flex;
+  gap: 10px;
+
+  margin-top: 4px;
+}
+
+.gallery-form-actions button {
+  flex: 1;
+
+  padding: 11px;
+
+  border: none;
+  border-radius: 8px;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+
+/* SUBMIT */
+
+.gallery-form-actions button:first-child {
+  background: var(--app-accent, #e50914);
+  color: white;
+}
+
+.gallery-form-actions button:first-child:hover {
+  background: var(--app-accent-hover, #ff2020);
+  transform: translateY(-1px);
+}
+
+
+/* BACK */
+
+.gallery-form-actions button:last-child {
+  background: var(--app-card-soft, #1b1b1b);
+  color: var(--app-text, #d0d0d0);
+
+  border: 1px solid var(--app-border, #2b2b2b);
+}
+
+.gallery-form-actions button:last-child:hover {
+  background: var(--app-accent-soft, #242424);
+  color: var(--app-text, #ffffff);
+}
+
+.gallery-form-error {
+  padding: 10px 12px;
+  border: 1px solid var(--app-danger, #dc2626);
+  border-radius: 8px;
+  color: var(--app-danger, #dc2626);
+  background: color-mix(in srgb, var(--app-danger, #dc2626) 10%, transparent);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+/* ========================= */
+/* POPUP */
+/* ========================= */
+
+.gallery-popup {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+
+  background: var(--app-card, #151515);
+  color: var(--app-text, #ffffff);
+
+  padding: 11px 15px;
+
+  border-radius: 8px;
+  border-left: 4px solid var(--app-accent, #e50914);
+
+  font-size: 12px;
+
+  box-shadow: var(--app-shadow, 0 4px 18px rgba(0,0,0,0.45));
+
+  animation: popupSlide 0.25s ease;
+}
+
+
+/* ========================= */
+/* ANIMATION */
+/* ========================= */
+
+@keyframes popupSlide {
+
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+}
+
+
+/* ========================= */
+/* MOBILE */
+/* ========================= */
+
+@media (max-width: 600px) {
+
+  .gallery-form-page {
+    padding: 14px;
+    align-items: flex-start;
+  }
+
+  .gallery-form-card {
+    padding: 18px;
+    border-radius: 12px;
+  }
+
+  .gallery-form-title {
+    font-size: 18px;
+  }
+
+  .gallery-form-actions {
+    flex-direction: column;
+  }
+
+  .image-preview img {
+    height: 150px;
+  }
+
+}

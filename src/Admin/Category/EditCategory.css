@@ -1,0 +1,99 @@
+/* ROOT */
+.category-form-page {
+  background: #000;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CARD */
+.category-form-card {
+  background: #111;
+  padding: 28px;
+  width: 420px;
+  border-radius: 8px;
+  border: 1px solid #222;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* TITLE */
+.category-form-title {
+  text-align: center;
+  color: #e50914;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* INPUTS */
+.category-form-input,
+.category-form-select {
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #333;
+  background: #0d0d0d;
+  color: #fff;
+  outline: none;
+  font-size: 14px;
+}
+
+.category-form-input:focus,
+.category-form-select:focus {
+  border-color: #e50914;
+}
+
+/* CHECKBOX */
+.category-form-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+/* ACTIONS */
+.category-form-actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* BUTTONS */
+.category-form-submit {
+  flex: 1;
+  background: #e50914;
+  border: none;
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.category-form-submit:hover {
+  background: #ff1e2d;
+}
+
+.category-form-back {
+  flex: 1;
+  background: #2a2a2a;
+  border: none;
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.category-form-back:hover {
+  background: #3a3a3a;
+}
+
+/* POPUP */
+.category-form-popup {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #e50914;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+}

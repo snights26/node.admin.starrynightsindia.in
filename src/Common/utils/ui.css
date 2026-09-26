@@ -1,0 +1,23 @@
+.ui-loader,
+.ui-empty-state {
+  padding: 28px;
+  border: 1px solid var(--app-border);
+  border-radius: 8px;
+  text-align: center;
+  color: var(--app-text-muted);
+  background: var(--app-card);
+}
+
+.ui-empty-state h3 {
+  margin: 0 0 6px;
+  color: var(--app-text);
+}
+
+.ui-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 22px 0;
+  color: var(--app-text);
+}

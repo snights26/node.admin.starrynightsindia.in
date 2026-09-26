@@ -1,0 +1,579 @@
+/* ======================= */
+/* ROOT SCOPE (IMPORTANT)  */
+/* ======================= */
+
+.pkg-form {
+  background:
+    radial-gradient(circle at 100% 0%, rgba(229, 9, 20, 0.09), transparent 25rem),
+    var(--app-bg);
+  padding: 24px;
+  color: var(--app-text);
+  max-width: 1180px;
+  margin: auto;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+/* ======================= */
+/* SECTION */
+/* ======================= */
+
+.pkg-form .form-section {
+  margin-bottom: 20px;
+  padding: 18px;
+  background: var(--app-surface-gradient);
+  border-radius: 14px;
+  border: 1px solid var(--app-border);
+  box-shadow: var(--app-shadow);
+}
+
+.pkg-form .form-section h3 {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 8px;
+  font-size: 15px;
+  color: #ff5d66;
+  letter-spacing: -0.01em;
+}
+
+.pkg-form .form-section h3::before {
+  width: 5px;
+  height: 18px;
+  border-radius: 999px;
+  background: linear-gradient(#ff5d66, #b90710);
+  box-shadow: 0 0 12px rgba(229, 9, 20, 0.55);
+  content: "";
+}
+
+.pkg-form .category-help {
+  margin: 0 0 16px 14px;
+  color: var(--app-text-muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* GRID */
+
+.pkg-form .grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+/* ======================= */
+/* INPUTS */
+/* ======================= */
+
+.pkg-form input,
+.pkg-form textarea,
+.pkg-form select {
+  width: 100%;
+  padding: 8px;
+  background: #0d0d0d;
+  border: 1px solid #2a2a2a;
+  color: white;
+  border-radius: 5px;
+  font-size: 13px;
+  box-sizing: border-box;
+}
+
+.pkg-form input:focus,
+.pkg-form textarea:focus,
+.pkg-form select:focus {
+  border-color: #e50914;
+  outline: none;
+}
+
+/* FULL WIDTH */
+
+.pkg-form .full-width {
+  grid-column: span 2;
+}
+
+/* ======================= */
+/* ITINERARY */
+/* ======================= */
+
+.pkg-form .day-box {
+  border: 1px solid var(--app-border);
+  padding: 10px;
+  border-radius: 6px;
+  background: var(--app-card-soft);
+  margin-bottom: 10px;
+}
+
+.pkg-form .day-box h4 {
+  margin-bottom: 6px;
+  font-size: 13px;
+  color: #ff4d4d;
+}
+
+/* ======================= */
+/* IMAGE */
+/* ======================= */
+
+.pkg-form .image-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.pkg-form .image-slot {
+  position: relative;
+  height: 90px;
+  border: 1px dashed var(--app-input-border);
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: var(--app-input);
+}
+
+.pkg-form .image-slot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pkg-form .image-slot span {
+  font-size: 11px;
+  color: #777;
+}
+
+.pkg-form .image-slot input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.pkg-form .image-slot button {
+  position: absolute;
+  z-index: 2;
+  top: 5px;
+  right: 5px;
+  width: 21px !important;
+  height: 21px !important;
+  min-width: 21px !important;
+  min-height: 21px !important;
+  padding: 0 !important;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(17, 24, 39, 0.86);
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.pkg-form .quotation-media-help {
+  margin: -4px 0 10px;
+  color: var(--app-text-muted, #a3a3a3);
+  font-size: 12px;
+}
+
+.pkg-form .quotation-itinerary-media-list {
+  display: grid;
+  gap: 10px;
+}
+
+.pkg-form .quotation-itinerary-media-day,
+.pkg-form .quotation-hotel-media-card {
+  padding: 11px;
+  border: 1px solid var(--app-border, #2a2a2a);
+  border-radius: 8px;
+  background: var(--app-card-soft, #111111);
+}
+
+.pkg-form .quotation-itinerary-media-day > strong,
+.pkg-form .quotation-hotel-media-card > strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--app-text, #ffffff);
+  font-size: 12px;
+  text-transform: capitalize;
+}
+
+.pkg-form .quotation-media-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.pkg-form .quotation-hotel-media-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+
+@media (max-width: 640px) {
+  .pkg-form .quotation-hotel-media-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* THUMBNAIL */
+
+.pkg-form .thumbnail-slot {
+  margin-top: 10px;
+  height: 110px;
+  border: 1px dashed #e50914;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: var(--app-input);
+}
+
+.pkg-form .thumbnail-slot span {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.pkg-form .thumbnail-slot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pkg-form .thumbnail-slot input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* ======================= */
+/* BUTTON */
+/* ======================= */
+
+.pkg-form .submit-btn {
+  width: 100%;
+  background: #e50914;
+  border: none;
+  padding: 10px;
+  font-size: 13px;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-top: 12px;
+  font-weight: 600;
+  color: white;
+}
+
+.pkg-form .submit-btn:hover {
+  background: #ff1f1f;
+}
+/* ======================= */
+/* CATEGORY */
+/* ======================= */
+
+.pkg-form .package-category-selector {
+  display: grid;
+  grid-template-columns: minmax(210px, 1fr) minmax(240px, 1.15fr) minmax(260px, 1.25fr);
+  gap: 12px;
+  align-items: stretch;
+}
+
+.pkg-form .package-category-field,
+.pkg-form .selected-subcategories-panel {
+  min-width: 0;
+  position: relative;
+  background: linear-gradient(145deg, rgba(14, 14, 15, 0.9), rgba(20, 20, 21, 0.9));
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.025);
+}
+
+.pkg-form .package-category-field {
+  display: grid;
+  align-content: start;
+  gap: 5px;
+}
+
+.pkg-form .package-category-label,
+.pkg-form .selected-subcategories-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #f5f5f6;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.pkg-form .package-category-label b,
+.pkg-form .selected-subcategories-title b {
+  display: inline-grid;
+  width: 20px;
+  height: 20px;
+  place-items: center;
+  border: 1px solid rgba(229, 9, 20, 0.5);
+  border-radius: 7px;
+  background: rgba(229, 9, 20, 0.12);
+  color: #ff858d;
+  font-size: 9px;
+  letter-spacing: 0.04em;
+}
+
+.pkg-form .package-category-field small {
+  min-height: 16px;
+  color: #85858a;
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+.pkg-form .package-category-field .react-select__control {
+  min-height: 44px;
+  margin-top: 5px;
+  background: #0b0b0c;
+  border-color: #373638;
+  border-radius: 10px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.pkg-form .package-category-field .react-select__control--is-focused {
+  border-color: #e50914;
+  box-shadow: 0 0 0 3px rgba(229, 9, 20, 0.12);
+}
+
+.pkg-form .package-category-field .react-select__placeholder {
+  color: #85858a;
+  font-size: 12px;
+}
+
+.pkg-form .package-category-field .react-select__single-value,
+.pkg-form .package-category-field .react-select__input-container,
+.pkg-form .package-category-field .react-select__indicator {
+  color: #f4f4f4;
+}
+
+.pkg-form .package-category-field .react-select__input {
+  width: auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.pkg-form .package-category-field .react-select__menu {
+  z-index: 10;
+  overflow: hidden;
+  border: 1px solid #303030;
+  background: #151515;
+}
+
+.pkg-form .package-category-field .react-select__option {
+  color: #ececec;
+}
+
+.pkg-form .package-category-field .react-select__option--is-focused {
+  background: rgba(229, 9, 20, 0.14);
+}
+
+.pkg-form .package-category-field .react-select__option--is-selected {
+  background: #e50914;
+  color: #ffffff;
+}
+
+.pkg-form .package-category-field .react-select__control--is-disabled {
+  opacity: 0.56;
+}
+
+.pkg-form .selected-subcategories-panel {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  background: linear-gradient(145deg, rgba(44, 16, 18, 0.58), rgba(17, 17, 18, 0.96));
+  border-color: rgba(229, 9, 20, 0.26);
+}
+
+.pkg-form .selected-subcategories-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.pkg-form .selected-subcategories-count {
+  display: inline-grid;
+  width: 24px;
+  height: 24px;
+  place-items: center;
+  border: 1px solid rgba(229, 9, 20, 0.5);
+  border-radius: 50%;
+  background: rgba(229, 9, 20, 0.15);
+  color: #ff858d;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.pkg-form .selected-subcategories-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.pkg-form .selected-subcategories-content .admin-pagination {
+  padding-top: 10px;
+  gap: 6px;
+  font-size: 11px;
+}
+
+.pkg-form .selected-subcategories-content .admin-pagination button {
+  min-width: 0;
+  padding: 6px 9px;
+  font-size: 11px;
+}
+
+.pkg-form .selected-subcategory-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  max-width: 100%;
+  padding: 6px 8px 6px 10px;
+  border: 1px solid rgba(229, 9, 20, 0.42);
+  border-radius: 9px;
+  background: rgba(229, 9, 20, 0.1);
+  color: #f7dadd;
+  font-size: 11px;
+  line-height: 1.25;
+}
+
+.pkg-form .selected-subcategory-parent {
+  color: #ff8e95;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.pkg-form .selected-subcategory-chip button {
+  display: inline-grid;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 15px;
+  line-height: 1;
+}
+
+.pkg-form .selected-subcategory-chip button:hover {
+  background: #e50914;
+}
+
+.pkg-form .selected-subcategories-empty {
+  display: flex;
+  align-items: center;
+  min-height: 43px;
+  margin: 0;
+  padding: 0 4px;
+  color: #98989d;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* The category picker is a shared admin control: keep it on the active theme
+   instead of carrying its original dark-only palette into light mode. */
+html[data-theme] .pkg-form .package-category-field,
+html[data-theme] .pkg-form .selected-subcategories-panel {
+  background: var(--app-card-soft);
+  border-color: var(--app-border);
+  box-shadow: none;
+}
+
+html[data-theme] .pkg-form :is(.package-category-label, .selected-subcategories-title),
+html[data-theme] .pkg-form .package-category-field .react-select__single-value,
+html[data-theme] .pkg-form .package-category-field .react-select__input-container,
+html[data-theme] .pkg-form .package-category-field .react-select__indicator,
+html[data-theme] .pkg-form .package-category-field .react-select__option,
+html[data-theme] .pkg-form .selected-subcategory-chip {
+  color: var(--app-text);
+}
+
+html[data-theme] .pkg-form .package-category-field small,
+html[data-theme] .pkg-form .package-category-field .react-select__placeholder,
+html[data-theme] .pkg-form .selected-subcategories-empty {
+  color: var(--app-text-muted);
+}
+
+html[data-theme] .pkg-form .package-category-field .react-select__control,
+html[data-theme] .pkg-form .package-category-field .react-select__menu {
+  background: var(--app-input);
+  border-color: var(--app-input-border);
+}
+
+html[data-theme] .pkg-form .selected-subcategory-chip {
+  background: var(--app-accent-soft);
+  border-color: var(--app-accent);
+}
+
+/* ======================= */
+/* 📱 MOBILE */
+/* ======================= */
+
+@media (max-width:768px){
+
+  .pkg-form .package-category-selector {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .pkg-form .package-category-field,
+  .pkg-form .selected-subcategories-panel {
+    padding: 12px;
+  }
+
+}
+
+/* ======================= */
+/* 📱 MOBILE */
+/* ======================= */
+
+@media (max-width:768px){
+
+  .pkg-form {
+    padding: 14px;
+  }
+
+  .pkg-form .form-section {
+    padding: 13px;
+  }
+
+  .pkg-form .form-section h3 {
+    font-size: 13px;
+  }
+
+  .pkg-form .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .pkg-form .full-width {
+    grid-column: span 1;
+  }
+
+  .pkg-form .image-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pkg-form .image-slot {
+    height: 80px;
+  }
+
+  .pkg-form .thumbnail-slot {
+    height: 100px;
+  }
+
+
+
+  .pkg-form .submit-btn {
+    font-size: 12px;
+    padding: 9px;
+  }
+}

@@ -1,0 +1,470 @@
+.footer{
+width:100%;
+max-width:100%;
+box-sizing:border-box;
+background:#111;
+background-clip:padding-box;
+color:#ddd;
+padding:60px 65px 28px;
+font-family:'Poppins',sans-serif;
+border-radius:0;
+overflow:hidden;
+isolation:isolate;
+}
+
+.footer-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:45px;
+}
+
+.footer-col{
+display:flex;
+flex-direction:column;
+}
+
+.footer-col h4{
+color:#fff;
+margin-bottom:18px;
+font-size:15px;
+font-weight:600;
+position:relative;
+}
+
+.footer-col h4::after{
+content:"";
+width:30px;
+height:2px;
+background:#e50914;
+position:absolute;
+left:0;
+bottom:-6px;
+transition:.4s;
+}
+
+.footer-col h4:hover::after{
+width:55px;
+}
+
+.footer-logo{
+width:170px;
+margin-bottom:14px;
+}
+
+.footer-description{
+font-size:12px;
+line-height:1.6;
+color:#aaa;
+}
+
+.footer a,
+.footer button{
+display:block;
+margin-bottom:10px;
+font-size:12px;
+color:#bbb;
+text-decoration:none;
+background:none;
+border:none;
+cursor:pointer;
+text-align:left;
+position:relative;
+}
+
+.footer a::after,
+.footer button::after{
+content:"";
+position:absolute;
+left:0;
+bottom:-3px;
+width:0;
+height:2px;
+background:#e50914;
+transition:.3s;
+}
+
+.footer a:hover::after,
+.footer button:hover::after{
+width:100%;
+}
+
+.footer-social{
+display:flex;
+gap:18px;
+margin-top:20px;
+}
+
+.social-icon{
+font-size:26px;
+color:#bbb;
+transition:.3s;
+}
+
+.social-icon:hover{
+color:#e50914;
+transform:scale(1.2);
+}
+
+.footer-bottom{
+border-top:1px solid #222;
+margin-top:20px;
+padding-top:20px;
+text-align:center;
+font-size:12px;
+color:#999;
+}
+
+/* ================= MODAL ================= */
+
+.modal-overlay{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.9);
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:99999;
+backdrop-filter:blur(6px);
+}
+
+.modal-content{
+background:#1c1c1c;
+width:82%;
+max-width:420px;
+padding:22px;
+border-radius:10px;
+max-height:72vh;
+overflow-y:auto;
+color:#ffffff;
+box-shadow:0 0 20px rgba(229,9,20,.18);
+position:relative;
+animation:fadeIn .3s ease;
+}
+
+.modal-content h2{
+font-size:18px;
+margin-bottom:14px;
+color:#ffffff;
+}
+
+.modal-content h4{
+font-size:13px;
+color:#e50914;
+margin-top:14px;
+}
+
+.modal-content p,
+.modal-content li{
+font-size:10px;
+line-height:1.5;
+color:#ffffff;
+}
+
+.close-btn{
+position:absolute;
+top:10px;
+right:14px;
+font-size:18px;
+background:none;
+border:none;
+color:#fff;
+cursor:pointer;
+}
+
+.close-btn:hover{
+color:#e50914;
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:scale(.95);
+}
+to{
+opacity:1;
+transform:scale(1);
+}
+}
+
+/* ================= BRANDS ================= */
+
+.snf-brands-strip{
+margin-bottom:50px;
+padding-bottom:35px;
+border-bottom:1px solid rgba(255,255,255,.08);
+text-align:center;
+}
+
+.snf-brands-title{
+color:#fff;
+font-size:18px;
+font-weight:700;
+margin-bottom:40px;
+letter-spacing:2px;
+}
+
+.snf-brands-row{
+display:flex;
+justify-content:center;
+gap:70px;
+flex-wrap:wrap;
+}
+
+.snf-brand{
+position:relative;
+cursor:pointer;
+text-align:center;
+transition:.3s;
+z-index:1;
+}
+
+.snf-brand img{
+height:60px;
+transition:.3s;
+}
+
+.snf-brand:hover{
+transform:scale(1.05);
+z-index:5;
+}
+
+.snf-brand:hover img{
+transform:translateY(-5px);
+}
+
+.snf-brand-info{
+position:absolute;
+top:120%;
+left:50%;
+transform:translateX(-50%) translateY(10px);
+background:rgba(18,18,18,.96);
+border:1px solid rgba(255,255,255,.12);
+color:#f8fafc;
+padding:14px;
+border-radius:12px;
+width:290px;
+opacity:0;
+visibility:hidden;
+pointer-events:none;
+transition:.3s;
+box-shadow:0 15px 40px rgba(0,0,0,.7);
+}
+
+.snf-brand:hover .snf-brand-info{
+opacity:1;
+visibility:visible;
+pointer-events:auto;
+transform:translateX(-50%) translateY(0);
+}
+
+.snf-brand-info h5{
+font-size:12px;
+margin-bottom:6px;
+color:#fff;
+}
+
+.snf-brand-info p{
+font-size:10px;
+line-height:1.5;
+color:#d4d4d8;
+}
+
+.snf-brands-row:hover .snf-brand{
+opacity:.3;
+filter:blur(2px);
+}
+
+.snf-brands-row .snf-brand:hover{
+opacity:1;
+filter:none;
+}
+
+/* ================= TABLET / MOBILE ================= */
+
+@media(max-width:768px){
+
+.footer{
+padding:26px 12px 14px;
+}
+
+.footer-container{
+grid-template-columns:repeat(2,minmax(130px,1fr));
+gap:18px;
+}
+
+.footer-col{
+align-items:flex-start;
+}
+
+.footer-col h4{
+font-size:12px;
+}
+
+.footer-logo{
+width:90px;
+}
+
+.footer-description{
+font-size:9px;
+max-width:130px;
+}
+
+.footer a,
+.footer button{
+font-size:9px;
+margin-bottom:7px;
+}
+
+.footer-social{
+gap:10px;
+}
+
+.social-icon{
+font-size:17px;
+}
+
+.footer-bottom{
+font-size:9px;
+}
+
+.snf-brands-title{
+font-size:13px;
+}
+
+.snf-brands-row{
+gap:20px;
+}
+
+.snf-brand img{
+height:34px;
+}
+
+.snf-brand-info{
+width:170px;
+padding:10px;
+}
+
+.snf-brand-info h5{
+font-size:10px;
+}
+
+.snf-brand-info p{
+font-size:8px;
+}
+
+.snf-brands-row:hover .snf-brand{
+opacity:1;
+filter:none;
+}
+
+.modal-content{
+width:88%;
+max-width:340px;
+padding:16px;
+}
+
+.modal-content h2{
+font-size:15px;
+}
+
+.modal-content h4{
+font-size:11px;
+}
+
+.modal-content p,
+.modal-content li{
+font-size:9px;
+}
+
+}
+
+/* ================= SMALL PHONES ================= */
+
+@media(max-width:480px){
+
+.footer{
+padding:22px 10px 12px;
+margin-bottom: -20px;
+}
+
+.footer-container{
+grid-template-columns:1fr 1fr;
+gap:14px;
+}
+
+.footer-logo{
+width:75px;
+}
+
+.footer-description{
+font-size:8px;
+}
+
+.footer a,
+.footer button{
+font-size:8px;
+}
+
+.social-icon{
+font-size:14px;
+}
+
+.snf-brand img{
+height:28px;
+}
+
+.snf-brands-title{
+font-size:11px;
+}
+
+.snf-brand-info{
+width:150px;
+}
+
+.modal-content{
+max-width:300px;
+padding:14px;
+}
+
+}
+
+.snf-brand{
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:10px;
+position:relative;
+cursor:pointer;
+text-align:center;
+transition:.3s;
+z-index:1;
+}
+
+.snf-brand-name{
+font-size:13px;
+font-weight:600;
+color:#fff;
+letter-spacing:.5px;
+transition:.3s;
+}
+
+.snf-brand:hover .snf-brand-name{
+color:#e50914;
+transform:translateY(-2px);
+}
+
+@media(max-width:768px){
+
+.snf-brand-name{
+font-size:10px;
+}
+
+}
+
+@media(max-width:480px){
+
+.snf-brand-name{
+font-size:5px;
+}
+
+}

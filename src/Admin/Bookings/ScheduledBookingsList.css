@@ -1,0 +1,229 @@
+/* ========================= */
+/* PAGE */
+/* ========================= */
+
+.sb-page {
+  min-height: 100vh;
+  background: #050505;
+  padding: 24px;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+.sb-search {
+  display: block;
+  width: min(100%, 420px);
+  margin: 0 0 16px auto;
+}
+
+.sb-empty {
+  padding: 28px;
+  text-align: center;
+}
+
+/* ========================= */
+/* HEADER */
+/* ========================= */
+
+.sb-page .sb-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+  gap: 12px;
+}
+
+.sb-page .sb-header h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+}
+
+/* ========================= */
+/* ACTION BUTTONS */
+/* ========================= */
+
+.sb-page .sb-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.sb-page .sb-actions button {
+  height: 36px;
+  padding: 0 14px;
+  border: 1px solid #1f1f1f;
+  background: #101010;
+  color: #dcdcdc;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+.sb-page .sb-actions button:hover {
+  background: #e50914;
+  border-color: #e50914;
+  color: white;
+}
+
+/* ========================= */
+/* TABLE WRAPPER */
+/* ========================= */
+
+.sb-page .sb-table-box {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid #161616;
+  border-radius: 14px;
+  background: #0c0c0c;
+}
+
+/* ========================= */
+/* TABLE */
+/* ========================= */
+
+.sb-page table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+}
+
+/* ========================= */
+/* TABLE HEADER */
+/* ========================= */
+
+.sb-page th {
+  background: #101010;
+  color: #8e8e8e;
+  text-align: left;
+  padding: 12px 14px;
+  font-size: 12px;
+  font-weight: 500;
+  border-bottom: 1px solid #1a1a1a;
+  letter-spacing: 0.3px;
+}
+
+/* ========================= */
+/* TABLE BODY */
+/* ========================= */
+
+.sb-page td {
+  padding: 12px 14px;
+  font-size: 13px;
+  color: #e5e5e5;
+  border-bottom: 1px solid #131313;
+}
+
+.sb-page tbody tr {
+  transition: 0.2s ease;
+}
+
+.sb-page tbody tr:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* ========================= */
+/* STATUS */
+/* ========================= */
+
+.sb-page .status-confirmed,
+.sb-page .status-pending {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 10px;
+  border-radius: 30px;
+  font-size: 11px;
+  font-weight: 600;
+  width: fit-content;
+}
+
+.sb-page .status-confirmed {
+  background: rgba(0, 230, 118, 0.12);
+  color: #00e676;
+}
+
+.sb-page .status-pending {
+  background: rgba(255, 179, 0, 0.12);
+  color: #ffb300;
+}
+
+/* ========================= */
+/* ACTION BUTTONS */
+/* ========================= */
+
+.sb-page td button {
+  border: none;
+  height: 30px;
+  padding: 0 12px;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s ease;
+  margin-right: 6px;
+}
+
+/* EDIT */
+
+.sb-page td button:first-child {
+  background: rgba(33, 150, 243, 0.12);
+  color: #42a5f5;
+}
+
+.sb-page td button:first-child:hover {
+  background: #2196f3;
+  color: white;
+}
+
+/* REMOVE */
+
+.sb-page td button:last-child {
+  background: rgba(255, 68, 68, 0.12);
+  color: #ff5252;
+}
+
+.sb-page td button:last-child:hover {
+  background: #ff4444;
+  color: white;
+}
+
+/* ========================= */
+/* MOBILE */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+  .sb-page {
+    padding: 16px;
+  }
+
+  .sb-page .sb-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .sb-page .sb-actions {
+    width: 100%;
+  }
+
+  .sb-page .sb-actions button {
+    flex: 1;
+  }
+
+  .sb-page th,
+  .sb-page td {
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .sb-page td button {
+    padding: 0 10px;
+    font-size: 11px;
+    margin-bottom: 4px;
+  }
+
+}

@@ -1,0 +1,265 @@
+/* CONTAINER */
+.schedule-container{
+  display:flex;
+  gap:14px;
+  height:100%;
+  min-height:0;
+  margin-bottom:0;
+}
+
+/* TABLE SECTION */
+.schedule-table{
+  flex:3;
+  background:var(--app-card, #0a0a0a);
+  padding:14px;
+  border-radius:10px;
+  color:var(--app-text, #ffffff);
+  border:1px solid var(--app-border, transparent);
+  min-width:0;
+  overflow:auto;
+  scroll-behavior:smooth;
+  overscroll-behavior:contain;
+}
+
+/* NEW HEADER */
+.schedule-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:10px;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.schedule-header h3{
+  margin:0;
+  font-weight:600;
+  font-size:16px;
+}
+
+/* ACTIONS */
+.schedule-actions{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-left:auto;
+}
+
+/* SEARCH INPUT */
+.tour-search{
+  background:var(--app-input, #111111);
+  border:1px solid var(--app-input-border, #333333);
+  color:var(--app-text, #ffffff);
+  padding:6px 10px;
+  border-radius:5px;
+  font-size:11px;
+  outline:none;
+  min-width:170px;
+  height:32px;
+}
+
+.tour-search:focus{
+  border-color:var(--app-accent, #e50914);
+}
+
+/* TABLE */
+.schedule-table table{
+  width:100%;
+  min-width:620px;
+  border-collapse:collapse;
+  color:var(--app-text, #ffffff);
+}
+
+/* HEAD */
+.schedule-table th{
+  color:var(--app-text-muted, #bbbbbb);
+  font-weight:500;
+  border-bottom:1px solid var(--app-border, #333333);
+  padding:8px;
+  font-size:12px;
+}
+
+/* BODY */
+.schedule-table td{
+  color:var(--app-text, #ffffff);
+  border-bottom:1px solid var(--app-border, #222222);
+  padding:8px;
+  font-size:12px;
+}
+
+/* VIEW BUTTON */
+.view-btn{
+  background:var(--app-accent, #e50914);
+  border:none;
+  padding:5px 10px;
+  font-size:11px;
+  color:white;
+  cursor:pointer;
+  border-radius:4px;
+  transition:0.2s;
+}
+
+.view-btn:hover{
+  background:var(--app-accent-hover, #ff1f1f);
+}
+
+/* STATUS */
+.status-ok{
+  color:#00e676;
+  font-weight:500;
+  font-size:12px;
+}
+
+.status-pending{
+  color:#ffab00;
+  font-weight:500;
+  font-size:12px;
+}
+
+/* CALENDAR BOX */
+.calendar-box{
+  flex:1;
+  background:var(--app-card, #0a0a0a);
+  padding:14px;
+  border-radius:10px;
+  color:var(--app-text, #ffffff);
+  border:1px solid var(--app-border, transparent);
+  min-width:250px;
+  min-height:0;
+  display:flex;
+  flex-direction:column;
+}
+
+.calendar-scroll{
+  flex:1;
+  min-width:0;
+}
+
+/* ================= */
+/* REACT CALENDAR    */
+/* ================= */
+
+.react-calendar{
+  background:var(--app-card-soft, #000000);
+  border:1px solid var(--app-border, transparent);
+  width:100%;
+  color:var(--app-text, #ffffff);
+  font-family:inherit;
+  font-size:12px;
+  min-width:0;
+}
+
+/* calendar header */
+.react-calendar__navigation button{
+  color:var(--app-accent, #ff0000);
+  font-size:13px;
+  min-height:30px;
+}
+
+/* days */
+.react-calendar__month-view__weekdays{
+  color:var(--app-accent, #ff0000);
+  font-size:10px;
+}
+
+/* tiles */
+.react-calendar__tile{
+  color:var(--app-text, #ffffff);
+  padding:6px;
+  border-radius:6px;
+}
+
+/* TODAY */
+.react-calendar__tile--now{
+  background:var(--app-accent, #e50914);
+  color:white;
+}
+
+/* SELECTED DATE */
+.react-calendar__tile--active{
+  background:var(--app-accent-hover, #ff1f1f);
+  color:rgb(255, 255, 255);
+}
+
+/* HOVER */
+.react-calendar__tile:hover{
+  background:var(--app-accent, #ff0000);
+}
+
+/* BUTTON ALIGN FIX */
+.admin-view-btn{
+  background:var(--app-accent, #e50914);
+  border:none;
+  padding:6px 12px;
+  font-size:11px;
+  color:white;
+  border-radius:5px;
+  cursor:pointer;
+  height:32px;
+}
+
+.admin-view-btn:hover{
+  background:var(--app-accent-hover, #ff1f1f);
+}
+
+/* 📱 RESPONSIVE */
+@media (max-width: 992px){
+
+  .schedule-container{
+    flex-direction:column;
+  }
+
+  .schedule-table{
+    max-height:320px;
+  }
+
+}
+
+@media (max-width: 768px){
+
+  .schedule-container{
+    flex-direction: column;
+  }
+
+  /* ORDER CHANGE */
+  .calendar-box{
+    order: 1;
+  }
+
+  .schedule-table{
+    order: 2;
+  }
+
+  .schedule-table,
+  .calendar-box{
+    padding:12px;
+  }
+
+  .schedule-table th,
+  .schedule-table td{
+    padding:6px;
+    font-size:8px;
+  }
+
+  .schedule-header{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .schedule-actions{
+    width:100%;
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .tour-search{
+    width:100%;
+    min-width:100%;
+  }
+
+  .admin-view-btn{
+    width:100%;
+  }
+
+}

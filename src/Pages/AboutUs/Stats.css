@@ -1,0 +1,189 @@
+/* ================= STATS SECTION WRAPPER ================= */
+
+.stats-section {
+  background: linear-gradient(180deg, #000, #050505);
+  padding: 110px 20px;
+  text-align: center;
+  color: white;
+  width: 100%;
+  position: relative;
+  z-index: 1; /* lower safe stacking */
+}
+
+/* Grid Container */
+.stats-grid {
+  display: flex;
+  gap: 100px; /* reduced */
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 100%;
+  margin: auto;
+}
+
+/* ================= CIRCLE BOX ================= */
+
+.stat-circle {
+  width: 200px;   /* 300 → 200 */
+  height: 200px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: radial-gradient(circle at center, #141414 20%, #000 70%);
+  box-shadow: 
+    inset 0 0 18px rgba(255, 76, 41, 0.15),
+    0 0 55px rgba(255, 76, 41, 0.25);
+  transition: 0.4s ease;
+}
+
+.stat-circle:hover {
+  transform: scale(1.08);
+  box-shadow: 
+    inset 0 0 30px rgba(255, 76, 41, 0.25),
+    0 0 90px rgba(255, 76, 41, 0.7);
+}
+
+/* ================= TEXT ================= */
+
+.stat-content h2 {
+  font-size: 56px; /* 84 → 56 */
+  color: #ff4c29;
+  margin: 0;
+  font-weight: 900;
+  text-shadow: 0 0 15px rgba(255, 76, 41, 0.5);
+}
+
+.stat-content p {
+  font-size: 16px; /* 22 → 16 */
+  color: #ddd;
+  margin-top: 10px;
+  letter-spacing: 0.5px;
+}
+
+/* ================= ORBIT DOT ================= */
+
+.dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #ff4c29;
+  border-radius: 50%;
+  animation: rotateDot 9s linear infinite;
+  box-shadow: 0 0 12px #ff4c29;
+}
+
+/* TRAIL */
+.dot::before,
+.dot::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 76, 41, 0.4);
+  border-radius: 50%;
+  animation: trail 2.8s infinite ease-out;
+}
+
+.dot::after {
+  animation-delay: 1.4s;
+}
+
+@keyframes trail {
+  0% { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(3); opacity: 0; }
+}
+
+/* ORBIT */
+@keyframes rotateDot {
+  0% { transform: rotate(0deg) translateX(100px); }
+  100% { transform: rotate(360deg) translateX(100px); }
+}
+
+@media (max-width: 768px) {
+  @keyframes rotateDot {
+    0% { transform: rotate(0deg) translateX(75px); }
+    100% { transform: rotate(360deg) translateX(75px); }
+  }
+}
+
+/* ================= BUTTON ================= */
+
+.about-link-btn {
+  margin-top: 110px;
+  background: transparent;
+  border: 2px solid #ff4c29;
+  padding: 14px 45px;
+  color: #ff4c29;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.35s ease;
+  border-radius: 100px;
+}
+
+.about-link-btn:hover {
+  background: #ff4c29;
+  color: #fff;
+  box-shadow: 0 0 35px rgba(255, 76, 41, 0.8);
+  transform: scale(1.08);
+}
+
+.about-link-btn:active {
+  transform: scale(1.15);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  .stats-grid {
+    gap: 40px;
+  }
+
+  .stat-circle {
+    width: 170px;
+    height: 170px;
+  }
+
+  .stat-content h2 {
+    font-size: 44px;
+  }
+
+  .stat-content p {
+    font-size: 14px;
+  }
+}
+@media (max-width: 480px) {
+  .stats-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .stat-circle {
+    width: 140px;
+    height: 140px;
+  }
+
+  .stat-content h2 {
+    font-size: 34px;
+  }
+
+  .stat-content p {
+    font-size: 13px;
+    margin-top: 6px;
+  }
+
+  .about-link-btn {
+    padding: 12px 35px;
+    font-size: 16px;
+    margin-top: 70px;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+   
+  }
+}

@@ -1,0 +1,281 @@
+/* Featured row editor — uses the same theme tokens as the rest of Admin. */
+.frf-page {
+  min-height: 100vh;
+  padding: clamp(28px, 5vw, 72px) clamp(16px, 4vw, 48px);
+  display: grid;
+  place-items: start center;
+  background: var(--app-page-gradient);
+  color: var(--app-text);
+  font-family: var(--sans, system-ui, "Segoe UI", sans-serif);
+}
+
+.frf-card {
+  position: relative;
+  width: min(100%, 900px);
+  padding: clamp(24px, 4vw, 42px);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  overflow: hidden;
+  border: 1px solid var(--app-border);
+  border-radius: 18px;
+  background: var(--app-surface-gradient);
+  box-shadow: var(--app-shadow);
+}
+
+.frf-card::before {
+  content: "";
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  top: -90px;
+  right: -90px;
+  pointer-events: none;
+  background: radial-gradient(circle, var(--app-accent-soft), transparent 70%);
+  filter: blur(20px);
+}
+
+.frf-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.frf-title {
+  color: var(--app-text);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.frf-title span {
+  color: var(--app-accent);
+}
+
+.frf-input,
+.frf-select {
+  width: 100%;
+  min-width: 0;
+  min-height: 48px;
+  padding: 11px 13px;
+  border: 1px solid var(--app-input-border);
+  border-radius: 10px;
+  background: var(--app-input);
+  color: var(--app-text);
+  font: inherit;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.frf-input::placeholder {
+  color: var(--app-text-muted);
+  opacity: 1;
+}
+
+.frf-input:hover,
+.frf-select:hover {
+  border-color: var(--app-accent);
+}
+
+.frf-input:focus,
+.frf-select:focus {
+  outline: none;
+  border-color: var(--app-accent);
+  box-shadow: var(--app-focus);
+}
+
+.frf-input:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.frf-match-logic {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 14px;
+  border: 1px solid var(--app-border);
+  border-radius: 10px;
+  background: var(--app-card-soft);
+}
+
+.frf-match-logic legend {
+  padding: 0 6px;
+  color: var(--app-text);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.frf-match-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.frf-match-options label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border: 1px solid var(--app-input-border);
+  border-radius: 8px;
+  background: var(--app-input);
+  color: var(--app-text);
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.frf-match-options input {
+  accent-color: var(--app-accent);
+}
+
+.frf-match-options label:has(input:focus-visible) {
+  box-shadow: var(--app-focus);
+}
+
+.frf-match-logic p {
+  margin: 0;
+  color: var(--app-text-muted);
+  font-size: 0.85rem;
+}
+
+.frf-add-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+  width: 100%;
+}
+
+.frf-add-btn,
+.frf-submit,
+.frf-back {
+  min-height: 48px;
+  border-radius: 10px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.frf-add-btn,
+.frf-submit {
+  border: 1px solid var(--app-accent);
+  background: var(--app-accent);
+  color: #fff;
+}
+
+.frf-add-btn {
+  min-width: 112px;
+  padding: 0 18px;
+  white-space: nowrap;
+}
+
+.frf-add-btn:hover,
+.frf-submit:hover {
+  background: var(--app-accent-hover);
+  box-shadow: 0 10px 24px var(--app-accent-soft);
+  transform: translateY(-1px);
+}
+
+.frf-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  min-height: 28px;
+}
+
+.frf-empty {
+  color: var(--app-text-muted);
+  font-size: 0.9rem;
+}
+
+.frf-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 100%;
+  padding: 7px 10px 7px 14px;
+  border: 1px solid var(--app-border);
+  border-radius: 999px;
+  background: var(--app-card-soft);
+  color: var(--app-text);
+  font-size: 0.9rem;
+}
+
+.frf-chip span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.frf-chip button {
+  flex: 0 0 auto;
+  width: 22px;
+  height: 22px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--app-text-muted);
+  cursor: pointer;
+  font: inherit;
+  line-height: 1;
+}
+
+.frf-chip button:hover,
+.frf-chip button:focus-visible {
+  background: var(--app-accent);
+  color: #fff;
+  outline: none;
+}
+
+.frf-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.frf-submit,
+.frf-back {
+  flex: 1 1 180px;
+  padding: 0 18px;
+}
+
+.frf-back {
+  border: 1px solid var(--app-border);
+  background: var(--app-card-soft);
+  color: var(--app-text);
+}
+
+.frf-back:hover {
+  border-color: var(--app-accent);
+  background: var(--app-accent-soft);
+}
+
+.frf-add-btn:focus-visible,
+.frf-submit:focus-visible,
+.frf-back:focus-visible {
+  outline: none;
+  box-shadow: var(--app-focus);
+}
+
+@media (max-width: 560px) {
+  .frf-page {
+    padding: 20px 12px;
+  }
+
+  .frf-card {
+    padding: 22px 18px;
+    border-radius: 14px;
+  }
+
+  .frf-add-section {
+    grid-template-columns: 1fr;
+  }
+
+  .frf-add-btn,
+  .frf-submit,
+  .frf-back {
+    width: 100%;
+  }
+}

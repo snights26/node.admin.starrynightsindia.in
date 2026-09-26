@@ -1,0 +1,233 @@
+.dbx-wrapper {
+  background: var(--app-page-gradient, radial-gradient(circle at top, #0d0d0d 0%, #000000 90%));
+  min-height: 100dvh;
+  color: var(--app-text, #ffffff);
+  font-family: "Segoe UI", sans-serif;
+  overflow-x: hidden;
+}
+
+.dbx-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 22px;
+  margin: 14px;
+  background: var(--app-surface-gradient, linear-gradient(135deg, rgba(20, 20, 20, 0.9), rgba(10, 10, 10, 0.95)));
+  border-radius: 12px;
+  border: 1px solid var(--app-border, rgba(255, 255, 255, 0.08));
+  backdrop-filter: blur(10px);
+  box-shadow: var(--app-shadow, 0 8px 25px rgba(0, 0, 0, 0.5));
+}
+
+.dbx-read-only-notice {
+  margin: 0 22px 8px;
+  padding: 10px 13px;
+  border: 1px solid color-mix(in srgb, var(--app-warning, #f59e0b) 38%, transparent);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--app-warning, #f59e0b) 11%, transparent);
+  color: var(--app-text, #ffffff);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.dbx-title h2 {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--app-accent, #e50914);
+  margin: 0;
+}
+
+.dbx-title span {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--app-text-muted, #aaaaaa);
+}
+
+.dbx-logout-btn {
+  padding: 8px 16px;
+  font-size: 12px;
+  background: var(--app-accent, #e50914);
+  border-radius: 8px;
+  border: 1px solid var(--app-accent, #e50914);
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: 800;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.dbx-logout-btn:hover {
+  background: var(--app-accent-hover, #f6121d);
+  transform: translateY(-1px);
+}
+
+.dbx-container {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(320px, 26vw, 440px);
+  align-items: start;
+  gap: 18px;
+  padding: 10px 22px 24px;
+  min-height: 0;
+}
+
+.dbx-left {
+  min-width: 0;
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: 16px;
+}
+
+.dbx-right {
+  min-width: 0;
+  display: flex;
+  align-items: flex-start;
+}
+
+.dbx-card {
+  background: var(--app-surface-gradient, rgba(18, 18, 18, 0.95));
+  color: var(--app-text, #ffffff);
+  border-radius: 14px;
+  border: 1px solid var(--app-border, #1f1f1f);
+  box-shadow: var(--app-shadow, 0 6px 20px rgba(0, 0, 0, 0.5));
+  overflow: hidden;
+  min-height: 0;
+}
+
+.dbx-category-shell {
+  overflow: visible;
+  display: flex;
+  min-height: 0;
+}
+
+.dbx-category-shell .admin-grid-container {
+  flex: 1;
+  max-width: none;
+  height: auto;
+  max-height: none;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.dbx-scroll {
+  height: auto;
+  overflow: visible;
+}
+
+.dbx-sticky {
+  position: sticky;
+  top: 14px;
+  width: 100%;
+  align-self: stretch;
+  max-height: calc(100dvh - 28px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.dbx-sticky .amp-wrapper {
+  min-height: 0;
+  height: auto;
+  overflow: visible;
+}
+
+.dbx-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+
+.dbx-scroll::-webkit-scrollbar-thumb {
+  background: var(--app-accent, #e50914);
+  border-radius: 999px;
+}
+
+.dbx-scroll::-webkit-scrollbar-track {
+  background: var(--app-card-soft, #111111);
+}
+
+html[data-theme="light"] .dbx-header,
+html[data-theme="light"] .dbx-card {
+  background: var(--app-surface, #ffffff);
+}
+
+html[data-theme="dark"] .dbx-wrapper {
+  background: radial-gradient(circle at top, #0d0d0d 0%, #000000 90%);
+}
+
+@media (max-width: 1000px) {
+  .dbx-container {
+    grid-template-columns: 1fr;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+  }
+
+  .dbx-left,
+  .dbx-right {
+    height: auto;
+  }
+
+  .dbx-left {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dbx-right {
+    width: 100%;
+  }
+
+  .dbx-sticky {
+    position: static;
+    max-height: unset;
+    height: auto;
+    overflow: visible;
+  }
+
+  .dbx-scroll { height: auto; overflow: visible; }
+}
+
+@media (max-width: 768px) {
+  .dbx-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .dbx-title h2 {
+    font-size: 18px;
+  }
+
+  .dbx-title span {
+    font-size: 11px;
+  }
+
+  .dbx-logout-btn {
+    align-self: flex-end;
+  }
+
+  .dbx-container {
+    padding: 10px;
+  }
+
+  .dbx-read-only-notice {
+    margin: 0 10px 8px;
+  }
+
+  .dbx-card {
+    padding: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .dbx-title h2 {
+    font-size: 16px;
+  }
+
+  .dbx-card {
+    padding: 10px;
+  }
+
+  .dbx-logout-btn {
+    font-size: 11px;
+    padding: 7px 12px;
+  }
+
+  .dbx-scroll { max-height: none; overflow: visible; }
+}

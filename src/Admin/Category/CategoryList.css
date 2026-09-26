@@ -1,0 +1,381 @@
+/* ========================= */
+/* ROOT */
+/* ========================= */
+
+.category-list-page {
+  background: #0b0b0b;
+  color: #fff;
+  min-height: 100vh;
+  padding: 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+
+/* ========================= */
+/* HEADER */
+/* ========================= */
+
+.category-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.category-list-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #e50914;
+  line-height: 1.2;
+}
+
+.category-list-subtitle {
+  font-size: 12px;
+  color: #777;
+  margin-top: 2px;
+}
+
+.category-list-header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+
+/* ========================= */
+/* FILTERS */
+/* ========================= */
+
+.category-list-filters {
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) minmax(180px, 1fr) minmax(230px, 1.35fr) auto;
+  align-items: end;
+  gap: 12px;
+  margin-bottom: 18px;
+  padding: 14px;
+  background: #131313;
+  border: 1px solid #1f1f1f;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.category-filter-field {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+
+.category-filter-field span {
+  color: #8d8d8d;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.category-filter-field select,
+.category-filter-field input {
+  width: 100%;
+  min-height: 40px;
+  padding: 0 11px;
+  border: 1px solid #2b2b2b;
+  border-radius: 8px;
+  outline: none;
+  background: #0d0d0d;
+  color: #f2f2f2;
+  font: inherit;
+  font-size: 13px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.category-filter-field select:focus,
+.category-filter-field input:focus {
+  border-color: #e50914;
+  box-shadow: 0 0 0 3px rgba(229, 9, 20, 0.12);
+}
+
+.category-filter-field input::placeholder {
+  color: #696969;
+}
+
+.category-filter-clear {
+  min-height: 40px;
+  padding: 0 13px;
+  border: 1px solid #363636;
+  border-radius: 8px;
+  background: transparent;
+  color: #d5d5d5;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.category-filter-clear:hover:not(:disabled) {
+  border-color: #e50914;
+  background: rgba(229, 9, 20, 0.12);
+  color: #ffffff;
+}
+
+.category-filter-clear:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+
+/* ========================= */
+/* ADD BUTTON */
+/* ========================= */
+
+.category-list-add-btn {
+  background: #e50914;
+  border: none;
+  padding: 9px 14px;
+  color: white;
+  cursor: pointer;
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: 0.25s ease;
+}
+
+.category-list-add-btn:hover {
+  background: #ff1e2d;
+  transform: translateY(-1px);
+}
+
+
+/* ========================= */
+/* TABLE WRAPPER */
+/* ========================= */
+
+.category-list-table-wrapper {
+  background: #131313;
+  border-radius: 12px;
+  overflow-x: auto;
+  border: 1px solid #1f1f1f;
+
+  box-shadow:
+    0 4px 20px rgba(0,0,0,0.35);
+}
+
+
+/* ========================= */
+/* TABLE */
+/* ========================= */
+
+.category-list-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+}
+
+
+/* ========================= */
+/* TABLE HEADER */
+/* ========================= */
+
+.category-list-table th {
+  background: #161616;
+  text-align: left;
+  padding: 12px 14px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #8d8d8d;
+  border-bottom: 1px solid #222;
+  white-space: nowrap;
+}
+
+
+/* ========================= */
+/* TABLE BODY */
+/* ========================= */
+
+.category-list-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #1c1c1c;
+  font-size: 13px;
+  color: #ddd;
+}
+
+
+/* ========================= */
+/* ROW HOVER */
+/* ========================= */
+
+.category-list-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.category-list-table tbody tr:hover {
+  background: #181818;
+}
+
+.category-list-empty {
+  padding: 32px 14px !important;
+  color: #8d8d8d !important;
+  text-align: center;
+}
+
+
+/* ========================= */
+/* CODE + NAME */
+/* ========================= */
+
+.code {
+  color: #7c7c7c;
+  font-size: 12px;
+}
+
+.name {
+  font-weight: 500;
+  color: #fff;
+}
+
+
+/* ========================= */
+/* BADGES */
+/* ========================= */
+
+.badge {
+  padding: 4px 9px;
+  border-radius: 30px;
+  font-size: 11px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badge.main {
+  background: rgba(0, 200, 255, 0.12);
+  color: #00cfff;
+}
+
+.badge.sub {
+  background: rgba(229,9,20,0.16);
+  color: #ff5a5a;
+}
+
+
+/* ========================= */
+/* ACTION BUTTONS */
+/* ========================= */
+
+.category-list-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.edit-btn,
+.delete-btn {
+  min-width: 72px;
+  min-height: 38px;
+  width: auto;
+  height: auto;
+  padding: 0 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 700;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: 0.2s ease;
+}
+
+
+/* EDIT */
+
+.edit-btn {
+  background: rgba(229,9,20,0.14);
+  color: #ff5c5c;
+}
+
+.edit-btn:hover {
+  background: #e50914;
+  color: white;
+}
+
+
+/* DELETE */
+
+.delete-btn {
+  background: #222;
+  color: #aaa;
+}
+
+.delete-btn:hover {
+  background: #333;
+  color: white;
+}
+
+
+/* ========================= */
+/* BACK BUTTON */
+/* ========================= */
+
+.category-list-back-btn {
+  margin-top: 0;
+  background: #181818;
+  border: 1px solid #2b2b2b;
+  padding: 9px 14px;
+  color: #bbb;
+  cursor: pointer;
+  border-radius: 7px;
+  font-size: 13px;
+  transition: 0.2s ease;
+}
+
+.category-list-back-btn:hover {
+  background: #e50914;
+  border-color: #e50914;
+  color: white;
+}
+
+
+/* ========================= */
+/* MOBILE */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+  .category-list-page {
+    padding: 14px;
+  }
+
+  .category-list-title {
+    font-size: 18px;
+  }
+
+  .category-list-subtitle {
+    font-size: 11px;
+  }
+
+  .category-list-add-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .category-list-header {
+    align-items: stretch;
+  }
+
+  .category-list-filters {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .category-filter-clear {
+    width: 100%;
+  }
+
+}

@@ -1,0 +1,1408 @@
+html[data-theme] {
+  background: var(--app-bg);
+  color: var(--app-text);
+  accent-color: var(--app-accent);
+}
+
+html[data-theme] body,
+html[data-theme] #root {
+  background: var(--app-page-gradient);
+  color: var(--app-text);
+}
+
+html[data-theme] :where(h1, h2, h3, h4, h5, h6) {
+  color: var(--app-text);
+}
+
+html[data-theme] a {
+  color: var(--app-link);
+}
+
+html[data-theme] a:hover {
+  color: var(--app-link-hover);
+}
+
+/* Admin pages */
+html[data-theme] :where(
+  .login-page,
+  .dbx-wrapper,
+  .ul-page,
+  .eu-page,
+  .sb-page,
+  .sbf-page,
+  .payments-page,
+  .add-payment-wrapper,
+  .addpkg-container,
+  .editpkg-container,
+  .pkg-form,
+  .pkg-list-container,
+  .category-page,
+  .category-list-page,
+  .add-category-page,
+  .category-form-page,
+  .gallery-list-page,
+  .gallery-form-page,
+  .hero-slider-admin-page,
+  .notification-list-page,
+  .notification-form-page,
+  .keywords-page,
+  .keyword-form-page,
+  .unanswered-page,
+  .fr-page,
+  .frf-page,
+  .quotation-container,
+  .about-page,
+  .career-page,
+  .contact-page
+) {
+  background: var(--app-page-gradient) !important;
+  color: var(--app-text) !important;
+}
+
+/* Admin surfaces */
+html[data-theme] :where(
+  .login-card,
+  .dbx-card,
+  .ul-table-box,
+  .ul-popup-box,
+  .eu-card,
+  .eu-popup-box,
+  .sb-table-box,
+  .sbf-card,
+  .sbf-popup-box,
+  .sbf-table-wrapper,
+  .payment-card,
+  .payments-card,
+  .popup-box,
+  .fr-table-wrapper,
+  .fr-modal,
+  .fr-empty,
+  .fr-add-card,
+  .fr-table-card,
+  .unanswered-table-wrapper,
+  .category-list-table-wrapper,
+  .category-form-card,
+  .add-category-card,
+  .gallery-list-table-wrapper,
+  .gallery-form-card,
+  .hero-slider-table-card,
+  .hero-slider-form-card,
+  .notification-list-table-wrapper,
+  .notification-form-card,
+  .keywords-table-wrapper,
+  .keyword-form-card,
+  .admin-grid-container,
+  .amp-wrapper,
+  .schedule-table,
+  .calendar-box,
+  .dashboard-category-card,
+  .package-card,
+  .modal-box,
+  .app-card,
+  .app-modal,
+  .contact-form,
+  .map-container,
+  .career-card,
+  .career-form,
+  .vm-card,
+  .session-box,
+  .footer
+) {
+  background: var(--app-surface-gradient) !important;
+  border-color: var(--app-border) !important;
+  color: var(--app-text) !important;
+  box-shadow: var(--app-shadow);
+}
+
+html[data-theme] :where(
+  .pkg-form .form-section,
+  .pkg-form .category-card,
+  .pkg-form .day-box,
+  .sbf-doc-item,
+  .upload-box,
+  .search-box,
+  .message-form,
+  .top-form,
+  .footer .modal-content,
+  .snf-brand-info
+) {
+  background: var(--app-card) !important;
+  border-color: var(--app-border) !important;
+  color: var(--app-text) !important;
+}
+
+html[data-theme] :where(
+  .login-card,
+  .dbx-card,
+  .ul-table-box,
+  .ul-popup-box,
+  .eu-card,
+  .eu-popup-box,
+  .sb-table-box,
+  .sbf-card,
+  .sbf-popup-box,
+  .sbf-table-wrapper,
+  .payment-card,
+  .payments-card,
+  .popup-box,
+  .fr-table-wrapper,
+  .fr-modal,
+  .fr-empty,
+  .fr-add-card,
+  .fr-table-card,
+  .unanswered-table-wrapper,
+  .category-list-table-wrapper,
+  .category-form-card,
+  .add-category-card,
+  .gallery-list-table-wrapper,
+  .gallery-form-card,
+  .hero-slider-table-card,
+  .hero-slider-form-card,
+  .notification-list-table-wrapper,
+  .notification-form-card,
+  .keywords-table-wrapper,
+  .keyword-form-card,
+  .admin-grid-container,
+  .amp-wrapper,
+  .schedule-table,
+  .calendar-box,
+  .dashboard-category-card,
+  .package-card,
+  .modal-box,
+  .app-card,
+  .app-modal,
+  .contact-form,
+  .map-container,
+  .career-card,
+  .career-form,
+  .vm-card,
+  .session-box,
+  .pkg-form .form-section,
+  .pkg-form .category-card,
+  .pkg-form .day-box,
+  .sbf-doc-item,
+  .upload-box,
+  .search-box,
+  .message-form,
+  .top-form
+) :where(p, span, label, small, li, td, th, strong, b) {
+  color: inherit !important;
+}
+
+html[data-theme] :where(
+  .ul-header h2,
+  .eu-header h2,
+  .payment-header h2,
+  .payments-header h1,
+  .sb-page .sb-header h2,
+  .sbf-header h2,
+  .addpkg-header h2,
+  .editpkg-header h2,
+  .fr-title,
+  .unanswered-title,
+  .grid-title,
+  .schedule-header h3,
+  .category-form h2,
+  .pkg-form .form-section h3,
+  .pkg-form .day-box h4,
+  .about-section h2,
+  .career-section h2,
+  .contact-info h2
+) {
+  color: var(--app-accent) !important;
+}
+
+html[data-theme] :where(p, label, td, span, li) {
+  color: inherit;
+}
+
+html[data-theme] :where(
+  .dbx-title span,
+  .payments-header p,
+  .sbf-section h3,
+  .footer-description,
+  .footer a,
+  .footer button,
+  .footer-bottom,
+  .snf-brand-info p
+) {
+  color: var(--app-text-muted) !important;
+}
+
+html[data-theme] .footer {
+  background: #050505 !important;
+  color: #d4d4d8 !important;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  border-radius: 0 !important;
+  overflow: hidden !important;
+  background-clip: padding-box !important;
+  isolation: isolate !important;
+}
+
+html[data-theme] .footer :where(.footer-col h4, .snf-brands-title, .snf-brand-info h5) {
+  color: #ffffff !important;
+}
+
+html[data-theme] .footer :where(p, span, li, small, label, a, button, .footer-description, .footer-bottom, .snf-brand-info p) {
+  color: #d4d4d8 !important;
+}
+
+/* Dashboard module menu */
+html[data-theme] .amp-wrapper {
+  background: var(--app-surface-gradient) !important;
+  border-color: var(--app-border) !important;
+  color: var(--app-text) !important;
+}
+
+html[data-theme] .amp-header h3 {
+  color: var(--app-text) !important;
+}
+
+html[data-theme] .amp-header span,
+html[data-theme] .amp-section-title {
+  color: var(--app-text-muted) !important;
+}
+
+html[data-theme] .amp-item {
+  background: var(--app-card-soft) !important;
+  border: 1px solid var(--app-border) !important;
+  color: var(--app-text) !important;
+}
+
+html[data-theme] .amp-item-label {
+  color: inherit !important;
+}
+
+html[data-theme] .amp-dot,
+html[data-theme] .amp-item::before {
+  background: var(--app-accent) !important;
+}
+
+html[data-theme] .amp-dot {
+  box-shadow: 0 0 0 4px var(--app-accent-soft) !important;
+}
+
+html[data-theme] .amp-item:hover {
+  background: var(--app-accent-soft) !important;
+  border-color: var(--app-accent) !important;
+  color: var(--app-accent-strong) !important;
+}
+
+html[data-theme="dark"] .amp-item:hover {
+  color: #ffffff !important;
+}
+
+/* Forms and native controls */
+html[data-theme] :where(
+  input,
+  select,
+  textarea,
+  .tour-search,
+  .grid-search,
+  .unanswered-input,
+  .react-datepicker-wrapper input
+) {
+  background: var(--app-input) !important;
+  border-color: var(--app-input-border) !important;
+  color: var(--app-text) !important;
+}
+
+html[data-theme] :where(input, select, textarea)::placeholder {
+  color: var(--app-text-muted) !important;
+}
+
+html[data-theme] :where(input, select, textarea):focus,
+html[data-theme] :where(.tour-search, .grid-search, .unanswered-input):focus {
+  border-color: var(--app-accent) !important;
+  box-shadow: var(--app-focus) !important;
+  outline: none !important;
+}
+
+/* One consistent treatment for list/search controls across the admin suite. */
+html[data-theme] input[type="search"] {
+  -webkit-appearance: none;
+  appearance: none;
+  min-height: 42px;
+  padding: 9px 13px !important;
+  border: 1px solid var(--app-input-border) !important;
+  border-radius: 10px !important;
+  font: inherit;
+  line-height: 1.35;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.025);
+}
+
+html[data-theme] input[type="search"]::-webkit-search-decoration,
+html[data-theme] input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+html[data-theme] select option {
+  background: var(--app-card);
+  color: var(--app-text);
+}
+
+html[data-theme] input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 0.85;
+}
+
+html[data-theme="dark"] input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+/* Buttons */
+html[data-theme] :where(
+  .app-button--primary,
+  .login-card button,
+  .dbx-logout-btn,
+  .ul-header button,
+  .view-btn,
+  .admin-view-btn,
+  .fetch-btn,
+  .submit-btn,
+  .sbf-submit,
+  .sbf-user-row button,
+  .sbf-row-header button,
+  .sbf-popup-box button,
+  .add-payment-btn,
+  .invoice-btn,
+  .fr-confirm,
+  .fr-edit,
+  .unanswered-submit,
+  .contact-form button,
+  .category-form button,
+  .pkg-form .submit-btn,
+  .session-box button
+) {
+  background: var(--app-accent) !important;
+  border-color: var(--app-accent) !important;
+  color: #ffffff !important;
+}
+
+html[data-theme] :where(
+  .login-card button:hover,
+  .dbx-logout-btn:hover,
+  .ul-header button:hover,
+  .view-btn:hover,
+  .admin-view-btn:hover,
+  .fetch-btn:hover,
+  .submit-btn:hover,
+  .sbf-submit:hover,
+  .sbf-user-row button:hover,
+  .sbf-row-header button:hover,
+  .add-payment-btn:hover,
+  .invoice-btn:hover,
+  .fr-confirm:hover,
+  .fr-edit:hover,
+  .unanswered-submit:hover,
+  .contact-form button:hover,
+  .pkg-form .submit-btn:hover
+) {
+  background: var(--app-accent-hover) !important;
+  border-color: var(--app-accent-hover) !important;
+}
+
+html[data-theme] :where(
+  .back-btn,
+  .addpkg-back-btn,
+  .editpkg-back-btn,
+  .unanswered-back-btn,
+  .fr-cancel,
+  .app-button--secondary,
+  .app-button--ghost,
+  .close-btn,
+  .modal-box button
+) {
+  background: var(--app-card-soft) !important;
+  border-color: var(--app-border) !important;
+  color: var(--app-text) !important;
+}
+
+html[data-theme] :where(.delete-btn, .fr-delete, .unanswered-remove, .eu-delete-btn, .app-button--danger) {
+  background: var(--app-danger) !important;
+  border-color: var(--app-danger) !important;
+  color: #ffffff !important;
+}
+
+html[data-theme] :where(button, a, input, select, textarea, [role="button"]):focus-visible {
+  outline: 2px solid var(--app-accent) !important;
+  outline-offset: 2px;
+}
+
+/* Tables outside invoice/transport/quotation PDF pages */
+html[data-theme] :where(
+  .ul-table-box table,
+  .sb-page table,
+  .sbf-table-wrapper table,
+  .payments-table,
+  .fr-table,
+  .unanswered-table,
+  .category-list-table-wrapper table,
+  .gallery-list-table-wrapper table,
+  .hero-slider-table-card table,
+  .notification-list-table-wrapper table,
+  .keywords-table-wrapper table,
+  .schedule-table table
+) {
+  background: var(--app-card) !important;
+  color: var(--app-text) !important;
+  border-color: var(--app-border) !important;
+}
+
+html[data-theme] :where(
+  .ul-table-box th,
+  .sb-page th,
+  .sbf-table-wrapper th,
+  .payments-table th,
+  .fr-table th,
+  .unanswered-table th,
+  .category-list-table-wrapper th,
+  .gallery-list-table-wrapper th,
+  .hero-slider-table-card th,
+  .notification-list-table-wrapper th,
+  .keywords-table-wrapper th,
+  .schedule-table th
+) {
+  background: var(--app-card-soft) !important;
+  color: var(--app-text-muted) !important;
+  border-color: var(--app-border) !important;
+}
+
+html[data-theme] :where(
+  .ul-table-box td,
+  .sb-page td,
+  .sbf-table-wrapper td,
+  .payments-table td,
+  .fr-table td,
+  .unanswered-table td,
+  .category-list-table-wrapper td,
+  .gallery-list-table-wrapper td,
+  .hero-slider-table-card td,
+  .notification-list-table-wrapper td,
+  .keywords-table-wrapper td,
+  .schedule-table td
+) {
+  color: var(--app-text) !important;
+  border-color: var(--app-border) !important;
+}
+
+html[data-theme] :where(
+  .ul-table-box tr:hover,
+  .sb-page tbody tr:hover,
+  .sbf-table-wrapper tr:hover,
+  .payments-table tbody tr:hover,
+  .fr-table tbody tr:hover,
+  .unanswered-table tbody tr:hover,
+  .schedule-table tbody tr:hover
+) {
+  background: var(--app-accent-soft) !important;
+}
+
+/* React Calendar */
+html[data-theme] .react-calendar {
+  width: 100%;
+  background: var(--app-card) !important;
+  border: 1px solid var(--app-border) !important;
+  border-radius: 10px;
+  color: var(--app-text) !important;
+  overflow: hidden;
+}
+
+html[data-theme] .react-calendar button {
+  background: transparent !important;
+  color: var(--app-text) !important;
+  border: 0 !important;
+  cursor: pointer;
+}
+
+html[data-theme] .react-calendar__navigation button {
+  color: var(--app-accent) !important;
+}
+
+html[data-theme] .react-calendar__navigation button:enabled:hover,
+html[data-theme] .react-calendar__navigation button:enabled:focus,
+html[data-theme] .react-calendar__tile:enabled:hover,
+html[data-theme] .react-calendar__tile:enabled:focus {
+  background: var(--app-accent-soft) !important;
+  color: var(--app-accent) !important;
+}
+
+html[data-theme] .react-calendar__month-view__weekdays {
+  color: var(--app-text-muted) !important;
+}
+
+html[data-theme] .react-calendar__month-view__days__day--neighboringMonth {
+  color: var(--app-text-muted) !important;
+  opacity: 0.55;
+}
+
+html[data-theme] .react-calendar__tile--now {
+  background: color-mix(in srgb, var(--app-warning) 18%, transparent) !important;
+  color: var(--app-warning) !important;
+}
+
+html[data-theme] .react-calendar__tile--active,
+html[data-theme] .react-calendar__tile--active:enabled:hover,
+html[data-theme] .react-calendar__tile--active:enabled:focus {
+  background: var(--app-accent) !important;
+  color: #ffffff !important;
+}
+
+/* React Datepicker */
+html[data-theme] .react-datepicker-popper {
+  z-index: 9999 !important;
+}
+
+html[data-theme] .react-datepicker {
+  background: var(--app-card) !important;
+  border-color: var(--app-border) !important;
+  color: var(--app-text) !important;
+  box-shadow: var(--app-shadow);
+}
+
+html[data-theme] .react-datepicker__header {
+  background: var(--app-card-soft) !important;
+  border-color: var(--app-border) !important;
+}
+
+html[data-theme] :where(
+  .react-datepicker__current-month,
+  .react-datepicker-time__header,
+  .react-datepicker-year-header,
+  .react-datepicker__day-name,
+  .react-datepicker__day
+) {
+  color: var(--app-text) !important;
+}
+
+html[data-theme] .react-datepicker__day:hover {
+  background: var(--app-accent-soft) !important;
+}
+
+html[data-theme] .react-datepicker__day--selected,
+html[data-theme] .react-datepicker__day--keyboard-selected {
+  background: var(--app-accent) !important;
+  color: #ffffff !important;
+}
+
+/* React Select */
+html[data-theme] :where(.rs__control, .react-select__control) {
+  background: var(--app-input) !important;
+  border-color: var(--app-input-border) !important;
+  box-shadow: none !important;
+}
+
+html[data-theme] :where(.rs__control:hover, .react-select__control:hover) {
+  border-color: var(--app-accent) !important;
+}
+
+html[data-theme] :where(.rs__menu, .react-select__menu) {
+  background: var(--app-card) !important;
+  border: 1px solid var(--app-border) !important;
+}
+
+html[data-theme] :where(.rs__option, .react-select__option) {
+  background: transparent !important;
+  color: var(--app-text) !important;
+}
+
+html[data-theme] :where(.rs__option--is-focused, .react-select__option--is-focused) {
+  background: var(--app-accent-soft) !important;
+}
+
+html[data-theme] :where(.rs__option--is-selected, .react-select__option--is-selected) {
+  background: var(--app-accent) !important;
+  color: #ffffff !important;
+}
+
+html[data-theme] :where(
+  .rs__single-value,
+  .rs__input-container,
+  .rs__placeholder,
+  .react-select__single-value,
+  .react-select__input-container,
+  .react-select__placeholder
+) {
+  color: var(--app-text) !important;
+}
+
+/* Footer */
+html[data-theme] .footer {
+  background: #050505 !important;
+  color: #d4d4d8 !important;
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+
+html[data-theme] :where(.footer-col h4, .snf-brands-title, .snf-brand-info h5) {
+  color: #ffffff !important;
+}
+
+html[data-theme] :where(.footer-col h4::after, .footer a::after, .footer button::after) {
+  background: var(--app-accent) !important;
+}
+
+html[data-theme] .footer :where(p, span, li, small, label, a, button, .footer-description, .footer-bottom, .snf-brand-info p) {
+  color: #d4d4d8 !important;
+}
+
+html[data-theme] .footer .snf-brand-info {
+  background: rgba(18,18,18,0.96) !important;
+  border: 1px solid rgba(255,255,255,0.12) !important;
+  color: #f8fafc !important;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.72) !important;
+}
+
+html[data-theme] .footer .snf-brand-info h5 {
+  color: #ffffff !important;
+}
+
+html[data-theme] .footer .snf-brand-info p {
+  color: #d4d4d8 !important;
+}
+
+html[data-theme] :where(.social-icon:hover, .close-btn:hover) {
+  color: var(--app-accent) !important;
+}
+
+/* Keep generated PDF/print canvases visually stable. */
+html[data-theme] :where(.invoice-container, .invoice-container *, .ts-container, .ts-container *, .pdf-wrapper .page, .pdf-wrapper .page *) {
+  transition: none !important;
+}
+
+/* Final admin CRUD theme standardization layer. Generated PDF/print views stay excluded above. */
+html[data-theme] :where(.contact-hero h1, .career-hero h1, .about-hero h1) {
+  color: var(--app-text) !important;
+}
+
+html[data-theme] .brand-red {
+  color: var(--app-accent) !important;
+}
+
+html[data-theme] :where(
+  .admin-page,
+  .list-page,
+  .form-page,
+  .ul-page,
+  .eu-page,
+  .sb-page,
+  .sbf-page,
+  .pkg-list-container,
+  .category-list-page,
+  .gallery-list-page,
+  .hero-slider-admin-page,
+  .notification-list-page,
+  .keywords-page,
+  .unanswered-page,
+  .fr-page
+) {
+  background: var(--app-page-gradient) !important;
+  color: var(--app-text) !important;
+}
+
+html[data-theme] :where(
+  .table-card,
+  .form-card,
+  .crud-card,
+  .admin-card,
+  .modal-box,
+  .popup-box,
+  .ul-popup-box,
+  .eu-popup-box,
+  .sbf-popup-box,
+  .upload-box,
+  .file-upload,
+  .search-box,
+  .filter-panel,
+  .status-panel
+) {
+  background: var(--app-surface-gradient) !important;
+  border: 1px solid var(--app-border) !important;
+  color: var(--app-text) !important;
+  box-shadow: var(--app-shadow) !important;
+}
+
+html[data-theme] :where(
+  table:not(.invoice-table):not(.ts-table):not(.quote-table),
+  .admin-table,
+  .crud-table
+) {
+  background: var(--table-row) !important;
+  color: var(--app-text) !important;
+  border-color: var(--app-border) !important;
+}
+
+html[data-theme] :where(
+  table:not(.invoice-table):not(.ts-table):not(.quote-table) thead th,
+  .admin-table thead th,
+  .crud-table thead th
+) {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--table-header) !important;
+  color: var(--app-text-muted) !important;
+  border-color: var(--app-border) !important;
+}
+
+html[data-theme] :where(
+  table:not(.invoice-table):not(.ts-table):not(.quote-table) tbody tr,
+  .admin-table tbody tr,
+  .crud-table tbody tr
+) {
+  background: var(--table-row) !important;
+}
+
+html[data-theme] :where(
+  table:not(.invoice-table):not(.ts-table):not(.quote-table) tbody tr:nth-child(even),
+  .admin-table tbody tr:nth-child(even),
+  .crud-table tbody tr:nth-child(even)
+) {
+  background: var(--table-row-alt) !important;
+}
+
+html[data-theme] :where(
+  table:not(.invoice-table):not(.ts-table):not(.quote-table) tbody tr:hover,
+  .admin-table tbody tr:hover,
+  .crud-table tbody tr:hover
+) {
+  background: var(--table-row-hover) !important;
+}
+
+html[data-theme] :where(
+  table:not(.invoice-table):not(.ts-table):not(.quote-table) td,
+  table:not(.invoice-table):not(.ts-table):not(.quote-table) th,
+  .admin-table td,
+  .admin-table th,
+  .crud-table td,
+  .crud-table th
+) {
+  color: inherit !important;
+  border-color: var(--app-border) !important;
+}
+
+html[data-theme] :where(.actions, .action-buttons, .table-actions) {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+html[data-theme] :where(.actions button, .action-buttons button, .table-actions button) {
+  min-height: 32px;
+  border-radius: 8px !important;
+  border: 1px solid var(--app-border) !important;
+  background: var(--app-card-soft) !important;
+  color: var(--app-text) !important;
+  font-weight: 700;
+}
+
+html[data-theme] :where(.actions button:hover, .action-buttons button:hover, .table-actions button:hover) {
+  border-color: var(--app-accent) !important;
+  color: var(--app-accent) !important;
+}
+
+html[data-theme] :where(.actions .danger, .action-buttons .danger, .table-actions .danger, button.danger) {
+  background: var(--app-danger) !important;
+  border-color: var(--app-danger) !important;
+  color: #ffffff !important;
+}
+
+html[data-theme] :where(.status-badge, .badge, .tag) {
+  background: var(--app-accent-soft) !important;
+  border: 1px solid var(--app-border) !important;
+  color: var(--app-text) !important;
+}
+
+html[data-theme] :where(.pagination, .pager, .table-pagination) :where(button, a) {
+  background: var(--app-card-soft) !important;
+  border: 1px solid var(--app-border) !important;
+  color: var(--app-text) !important;
+}
+
+html[data-theme] :where(.pagination, .pager, .table-pagination) :where(button.active, a.active, button:hover, a:hover) {
+  background: var(--app-accent) !important;
+  border-color: var(--app-accent) !important;
+  color: #ffffff !important;
+}
+
+html[data-theme] :where(input[type="file"], .file-upload, .upload-box, .dropzone) {
+  background: var(--app-input) !important;
+  border-color: var(--app-input-border) !important;
+  color: var(--app-text) !important;
+}
+
+@media (max-width: 768px) {
+  html[data-theme] :where(.ul-table-box, .sb-table-box, .sbf-table-wrapper, .payments-table-wrapper, .fr-table-wrapper, .category-list-table-wrapper, .gallery-list-table-wrapper, .hero-slider-table-card, .notification-list-table-wrapper, .keywords-table-wrapper, .unanswered-table-wrapper) {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* PDF templates are print artifacts and must not inherit app theme typography/colors. */
+html[data-theme] :where(.ts-a4, .invoice-container, .pdf-wrapper .page) {
+  background: #ffffff !important;
+  color: #111827 !important;
+}
+
+html[data-theme] :where(.ts-hero, .ts-hero *, .ts-status-pill, .invoice-band, .invoice-band *, .quote-hero, .quote-hero *, .account-box, .account-box *, .invoice-table th, .ts-table th, .quote-table th) {
+  color: #ffffff !important;
+}
+
+html[data-theme] :where(.ts-company h1, .ts-document-meta strong, .ts-panel h3, .ts-section-title h2, .ts-page-footer strong, .company-details h1, .invoice-meta-card strong, .invoice-total-card strong, .invoice-footer strong, .quote-header h1, .quote-doc-card strong, .quote-footer strong, .regards-section h3, .hotel-grid strong, .advisory-grid strong) {
+  color: #0b1f3a !important;
+}
+
+html[data-theme] :where(.ts-info-item strong, .ts-contact-line strong, .invoice-stats strong, .invoice-table td, .ts-table td, .quote-table td, .quote-list li) {
+  color: #111827 !important;
+}
+
+html[data-theme] :where(.ts-company p, .ts-document-meta span, .ts-document-meta small, .ts-info-item span, .ts-contact-line span, .ts-muted, .ts-page-footer, .company-details p, .invoice-meta-card span, .invoice-meta-card small, .invoice-total-row p, .invoice-footer, .quote-header p, .quote-doc-card span, .quote-doc-card small, .quote-footer, .terms-block p, .advisory-grid p, .quote-note, .regards-section p) {
+  color: #4b5563 !important;
+}
+
+html[data-theme] :where(.ts-eyebrow, .ts-kicker, .invoice-eyebrow, .quote-eyebrow) {
+  color: #d9101f !important;
+}
+
+html[data-theme] :where(.quote-international .quote-eyebrow) {
+  color: #0b5d8f !important;
+}
+
+html[data-theme] :where(.invoice-success) {
+  color: #138a36 !important;
+}
+
+html[data-theme] :where(.invoice-danger) {
+  color: #d9101f !important;
+}
+
+/* Final admin theme variable guard. Keeps light mode white/red/black even if older root vars are cached. */
+html[data-theme="light"] {
+  --app-bg: #f8fafc !important;
+  --app-surface: #ffffff !important;
+  --app-card: #ffffff !important;
+  --app-card-soft: #f1f5f9 !important;
+  --app-text: #111827 !important;
+  --app-text-muted: #64748b !important;
+  --app-border: #e2e8f0 !important;
+  --app-accent: #e50914 !important;
+  --app-accent-hover: #f6121d !important;
+  --app-accent-strong: #b20710 !important;
+  --app-accent-soft: rgba(229,9,20,0.11) !important;
+  --app-input: #ffffff !important;
+  --app-input-border: #cbd5e1 !important;
+  --app-shadow: 0 14px 34px rgba(15,23,42,0.12) !important;
+  --app-page-gradient: radial-gradient(circle at top left, rgba(229,9,20,0.08), transparent 34rem), #f8fafc !important;
+  --app-surface-gradient: linear-gradient(180deg, #ffffff, #f8fafc) !important;
+  --app-nav-bg: #111111 !important;
+  --app-overlay: rgba(15,23,42,0.48) !important;
+  --app-link: #111827 !important;
+  --app-link-hover: #e50914 !important;
+  --app-focus: 0 0 0 3px rgba(229,9,20,0.18) !important;
+  --accent-bg: rgba(229,9,20,0.11) !important;
+  --accent-border: rgba(229,9,20,0.28) !important;
+  --social-bg: #f1f5f9 !important;
+  --shadow: 0 14px 34px rgba(15,23,42,0.12) !important;
+  --accent: #e50914 !important;
+  --background-primary: #f8fafc !important;
+  --background-secondary: #ffffff !important;
+  --text-primary: #111827 !important;
+  --text-secondary: #64748b !important;
+  --border-color: #e2e8f0 !important;
+  --table-header: #f1f5f9 !important;
+  --table-row: #ffffff !important;
+  --table-row-alt: #f8fafc !important;
+  --table-row-hover: rgba(229,9,20,0.08) !important;
+  --accent-color: #e50914 !important;
+}
+
+html[data-theme="dark"] {
+  --app-bg: #050505 !important;
+  --app-surface: #111111 !important;
+  --app-card: #181818 !important;
+  --app-card-soft: #232323 !important;
+  --app-text: #f8fafc !important;
+  --app-text-muted: #b3b3b3 !important;
+  --app-border: rgba(255,255,255,0.12) !important;
+  --app-accent: #e50914 !important;
+  --app-accent-hover: #ff1f2d !important;
+  --app-accent-strong: #b20710 !important;
+  --app-accent-soft: rgba(229,9,20,0.16) !important;
+  --app-input: #0d0d0d !important;
+  --app-input-border: rgba(255,255,255,0.16) !important;
+  --app-page-gradient: radial-gradient(circle at top left, rgba(229,9,20,0.10), transparent 34rem), linear-gradient(180deg, #050505, #0d0d0d) !important;
+  --app-surface-gradient: linear-gradient(180deg, #1b1b1b, #111111) !important;
+  --table-header: #181818 !important;
+  --table-row: #101010 !important;
+  --table-row-alt: #151515 !important;
+  --table-row-hover: rgba(229,9,20,0.14) !important;
+}
+
+/* Shared admin action controls. Keeps Back/Edit/View/Delete/Remove readable and stable across CRUD screens. */
+html[data-theme] :where(
+  .ul-page,
+  .eu-page,
+  .sb-page,
+  .sbf-page,
+  .payments-page,
+  .add-payment-wrapper,
+  .invoice-wrapper,
+  .enquiry-container,
+  .category-list-page,
+  .category-form-page,
+  .pkg-list-container,
+  .addpkg-container,
+  .editpkg-container,
+  .gallery-list-page,
+  .gallery-form-page,
+  .notification-list-page,
+  .notification-form-page,
+  .fr-page,
+  .frf-page,
+  .first-row-page,
+  .keywords-page,
+  .keyword-form-page,
+  .unanswered-page,
+  .quotation-container .top-form
+) :where(button, .app-button, a[role="button"]) {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  min-width: 78px !important;
+  min-height: 40px !important;
+  width: auto !important;
+  max-width: 100% !important;
+  padding: 0 14px !important;
+  border-radius: 10px !important;
+  border: 1px solid var(--app-border) !important;
+  box-sizing: border-box !important;
+  background: var(--app-card-soft) !important;
+  color: var(--app-text) !important;
+  cursor: pointer !important;
+  font-size: 14px !important;
+  font-weight: 750 !important;
+  line-height: 1 !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  text-transform: none !important;
+  white-space: nowrap !important;
+  overflow: visible !important;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, border-color 0.18s ease, color 0.18s ease !important;
+}
+
+html[data-theme] :where(
+  .ul-page,
+  .eu-page,
+  .sb-page,
+  .sbf-page,
+  .payments-page,
+  .add-payment-wrapper,
+  .invoice-wrapper,
+  .enquiry-container,
+  .category-list-page,
+  .category-form-page,
+  .pkg-list-container,
+  .addpkg-container,
+  .editpkg-container,
+  .gallery-list-page,
+  .gallery-form-page,
+  .notification-list-page,
+  .notification-form-page,
+  .fr-page,
+  .frf-page,
+  .first-row-page,
+  .keywords-page,
+  .keyword-form-page,
+  .unanswered-page,
+  .quotation-container .top-form
+) :where(button:not(:disabled):hover, .app-button:not(:disabled):hover, a[role="button"]:hover) {
+  transform: translateY(-1px) !important;
+  box-shadow: var(--app-shadow) !important;
+}
+
+html[data-theme] :where(
+  .ul-page,
+  .eu-page,
+  .sb-page,
+  .sbf-page,
+  .payments-page,
+  .add-payment-wrapper,
+  .invoice-wrapper,
+  .enquiry-container,
+  .category-list-page,
+  .category-form-page,
+  .pkg-list-container,
+  .addpkg-container,
+  .editpkg-container,
+  .gallery-list-page,
+  .gallery-form-page,
+  .notification-list-page,
+  .notification-form-page,
+  .fr-page,
+  .frf-page,
+  .first-row-page,
+  .keywords-page,
+  .keyword-form-page,
+  .unanswered-page,
+  .quotation-container .top-form
+) :where(button:disabled, .app-button:disabled) {
+  cursor: not-allowed !important;
+  opacity: 0.58 !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+html[data-theme] :where(
+  .category-list-add-btn,
+  .gallery-list-add,
+  .notification-list-add,
+  .keywords-add,
+  .add-payment-btn,
+  .fr-add-btn,
+  .pkg-header > button,
+  .fr-actions button:first-child,
+  .frf-submit,
+  .category-form-submit,
+  .notification-form-submit,
+  .keyword-form-submit,
+  .fetch-btn,
+  .invoice-actions .download-btn,
+  .addpkg-submit-btn,
+  .editpkg-submit-btn
+) {
+  background: var(--app-accent) !important;
+  border-color: var(--app-accent) !important;
+  color: #ffffff !important;
+}
+
+html[data-theme] :where(
+  .view-btn,
+  .invoice-btn,
+  .edit-btn,
+  .keywords-edit,
+  .notification-list-edit,
+  .gallery-list-edit,
+  .fr-edit,
+  .pkg-table td:last-child button:first-child,
+  .ul-actions button:first-child
+) {
+  background: #2563eb !important;
+  border-color: #2563eb !important;
+  color: #ffffff !important;
+}
+
+html[data-theme] :where(
+  .delete-btn,
+  .keywords-delete,
+  .notification-list-delete,
+  .gallery-list-delete,
+  .gallery-list-remove,
+  .fr-delete,
+  .fr-remove-btn,
+  .unanswered-remove,
+  .eu-delete-btn,
+  .danger
+) {
+  background: var(--app-danger) !important;
+  border-color: var(--app-danger) !important;
+  color: #ffffff !important;
+}
+
+html[data-theme] :where(.print-btn, .fr-actions button:nth-child(2), .save-order-btn) {
+  background: var(--app-success) !important;
+  border-color: var(--app-success) !important;
+  color: #ffffff !important;
+}
+
+html[data-theme] :where(
+  .category-list-back-btn,
+  .notification-list-back,
+  .gallery-list-back,
+  .keywords-back,
+  .quote-back-btn,
+  .addpkg-back-btn,
+  .editpkg-back-btn,
+  .fr-back-btn,
+  .frf-back,
+  .unanswered-back-btn,
+  .eu-header button,
+  .ul-header button,
+  .invoice-actions .back-btn,
+  .payments-page .back-btn,
+  .add-payment-wrapper .back-btn,
+  .pkg-header .header-left button,
+  .notification-form-actions button:last-child,
+  .category-form-back,
+  .keyword-form-actions .back-btn
+) {
+  background: var(--app-card-soft) !important;
+  border-color: var(--app-border) !important;
+  color: var(--app-text) !important;
+}
+
+html[data-theme] .fr-actions button:nth-child(3) {
+  background: var(--app-card-soft) !important;
+  border-color: var(--app-border) !important;
+  color: var(--app-text) !important;
+}
+
+html[data-theme] :where(
+  .category-list-back-btn:hover,
+  .notification-list-back:hover,
+  .gallery-list-back:hover,
+  .keywords-back:hover,
+  .quote-back-btn:hover,
+  .addpkg-back-btn:hover,
+  .editpkg-back-btn:hover,
+  .fr-back-btn:hover,
+  .frf-back:hover,
+  .unanswered-back-btn:hover,
+  .eu-header button:hover,
+  .ul-header button:hover,
+  .invoice-actions .back-btn:hover,
+  .payments-page .back-btn:hover,
+  .add-payment-wrapper .back-btn:hover,
+  .pkg-header .header-left button:hover
+) {
+  background: var(--app-accent) !important;
+  border-color: var(--app-accent) !important;
+  color: #ffffff !important;
+}
+
+html[data-theme] :where(
+  .category-list-header-actions,
+  .category-list-actions,
+  .notification-list-actions,
+  .notification-list-action-btns,
+  .keywords-actions,
+  .keywords-action-btns,
+  .gallery-list-actions,
+  .gallery-list-action-btns,
+  .gallery-list-row-actions,
+  .fr-actions,
+  .fr-action-btns,
+  .fr-modal-actions,
+  .eu-popup-actions,
+  .invoice-actions,
+  .btn-row,
+  .notification-form-actions,
+  .category-form-actions,
+  .keyword-form-actions
+) {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  flex-wrap: wrap !important;
+}
+
+html[data-theme] :where(
+  .pkg-table td:last-child,
+  .payments-table td:last-child,
+  .enquiry-table td:last-child,
+  .category-list-table td:last-child,
+  .notification-list-table td:last-child,
+  .keywords-table td:last-child,
+  .gallery-list-table td:last-child,
+  .fr-table td:last-child
+) {
+  white-space: nowrap !important;
+  min-width: 180px !important;
+}
+
+html[data-theme] :where(
+  .pkg-table td:last-child > button,
+  .payments-table td:last-child > button,
+  .enquiry-table td:last-child > button
+) {
+  margin: 4px 6px 4px 0 !important;
+}
+
+/* Active enquiry screen */
+html[data-theme] .enquiry-container {
+  background: var(--app-page-gradient) !important;
+  color: var(--app-text) !important;
+}
+
+html[data-theme] :where(.enquiry-table, .enquiry-table thead, .enquiry-table tbody, .enquiry-table tr, .enquiry-table td, .enquiry-table th) {
+  background: transparent !important;
+  color: var(--app-text) !important;
+  border-color: var(--app-border) !important;
+}
+
+html[data-theme] .enquiry-table {
+  background: var(--table-row) !important;
+  box-shadow: var(--app-shadow) !important;
+}
+
+html[data-theme] .enquiry-table th {
+  background: var(--table-header) !important;
+  color: var(--app-text-muted) !important;
+}
+
+html[data-theme] .enquiry-table tr:nth-child(even) {
+  background: var(--table-row-alt) !important;
+}
+
+html[data-theme] :where(.popup-box, .enquiry-popup, .modal-box) {
+  background: var(--app-card) !important;
+  border: 1px solid var(--app-border) !important;
+  color: var(--app-text) !important;
+}
+
+html[data-theme] :where(.message-format, .message-preview, .enquiry-message) {
+  background: var(--app-card-soft) !important;
+  border: 1px solid var(--app-border) !important;
+  color: var(--app-text) !important;
+}
+
+html[data-theme] :where(.message-format, .message-preview, .enquiry-message) * {
+  color: var(--app-text) !important;
+}
+
+/* PDF workspaces: keep the on-screen action buttons themed without touching the generated PDF body. */
+html[data-theme] .invoice-actions {
+  justify-content: center !important;
+  padding: 20px 24px !important;
+}
+
+html[data-theme] .invoice-actions :where(.back-btn, .download-btn) {
+  flex: 0 0 auto !important;
+  min-width: 160px !important;
+  max-width: max-content !important;
+}
+
+html[data-theme] .quote-footer {
+  background: rgba(255, 255, 255, 0.94) !important;
+  z-index: 3 !important;
+}
+
+/* First row tours select and admin badges */
+html[data-theme] :where(.fr-add-card, .fr-table-card) {
+  background: var(--app-card) !important;
+  border-color: var(--app-border) !important;
+  color: var(--app-text) !important;
+  box-shadow: var(--app-shadow) !important;
+}
+
+html[data-theme] :where(.fr__control, .fr__menu) {
+  background: var(--app-input) !important;
+  border-color: var(--app-input-border) !important;
+  color: var(--app-text) !important;
+  box-shadow: none !important;
+}
+
+html[data-theme] .fr__control--is-focused {
+  border-color: var(--app-accent) !important;
+  box-shadow: var(--app-focus) !important;
+}
+
+html[data-theme] :where(.fr__single-value, .fr__input-container, .fr__option) {
+  color: var(--app-text) !important;
+}
+
+html[data-theme] .fr__placeholder {
+  color: var(--app-text-muted) !important;
+}
+
+html[data-theme] .fr__option {
+  background: var(--app-input) !important;
+}
+
+html[data-theme] .fr__option--is-focused {
+  background: var(--table-row-hover) !important;
+}
+
+html[data-theme] .fr__option--is-selected {
+  background: var(--app-accent) !important;
+  color: #ffffff !important;
+}
+
+html[data-theme] :where(.target-badge, .fr-badge) {
+  background: var(--app-accent-soft) !important;
+  border: 1px solid var(--app-border) !important;
+  color: var(--app-text) !important;
+}
+
+/* Quotation media and hotel editors */
+html[data-theme] :where(.quote-image-picker, .quotation-itinerary-media-day, .quotation-hotel-media-card) {
+  background: var(--app-card-soft) !important;
+  border-color: var(--app-border) !important;
+  color: var(--app-text) !important;
+}
+
+html[data-theme] :where(.quotation-media-help) {
+  color: var(--app-text-muted) !important;
+}
+
+html[data-theme] .quotation-container .quote-hotel-fields > label > span {
+  color: var(--app-text-muted) !important;
+}
+
+html[data-theme] .quotation-container .quote-hotel-entry {
+  background: var(--app-input) !important;
+  border-color: var(--app-input-border) !important;
+}
+
+html[data-theme] .quotation-container .top-form .quote-hotel-entry input,
+html[data-theme] .quotation-container .top-form .quote-hotel-entry input:focus {
+  background: transparent !important;
+  border: 0 !important;
+  color: var(--app-text) !important;
+  box-shadow: none !important;
+}
+
+html[data-theme] .quotation-container .quote-hotel-chip {
+  background: var(--app-accent-soft) !important;
+  border: 1px solid var(--app-border) !important;
+  color: var(--app-text) !important;
+}
+
+html[data-theme] .quotation-container .quote-hotel-chip button {
+  display: inline-flex !important;
+  width: 16px !important;
+  min-width: 16px !important;
+  max-width: 16px !important;
+  height: 16px !important;
+  min-height: 16px !important;
+  max-height: 16px !important;
+  flex: 0 0 16px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 50% !important;
+  background: transparent !important;
+  color: var(--app-text-muted) !important;
+  font-size: 16px !important;
+  line-height: 1 !important;
+}
+
+html[data-theme] .quotation-container .quote-hotel-chip button:hover,
+html[data-theme] .quotation-container .quote-hotel-chip button:focus-visible {
+  transform: none !important;
+  box-shadow: none !important;
+  background: var(--app-accent) !important;
+  color: #ffffff !important;
+}
+
+html[data-theme] .quote-image-picker button {
+  min-width: 20px !important;
+  min-height: 20px !important;
+  width: 20px !important;
+  height: 20px !important;
+  padding: 0 !important;
+  background: var(--app-card) !important;
+  border-color: var(--app-border) !important;
+  color: var(--app-text) !important;
+}
+
+/* Global chrome guard: admin footer must stay full-width with sharp edges. */
+html[data-theme] .footer {
+  width: 100% !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  border-radius: 0 !important;
+}
