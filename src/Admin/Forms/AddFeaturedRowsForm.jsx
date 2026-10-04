@@ -11,7 +11,8 @@ function AddFeaturedRowsForm({ mode }) {
     rowId: "",
     title: "",
     type: "package",
-    visibleOn: "home"
+    visibleOn: "home",
+    sequence: 1
   });
   const [packages, setPackages] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -45,7 +46,8 @@ function AddFeaturedRowsForm({ mode }) {
           rowId: row.rowId || row.id,
           title: row.title || row.rowTitle || "",
           type: row.type || row.rowType || "package",
-          visibleOn: row.visibleOn || "home"
+          visibleOn: row.visibleOn || "home",
+          sequence: row.sequence || 1
         });
         setPackageMode(row.packageMode || "name");
         setCategoryMatchOperator(row.categoryMatchOperator === "AND" ? "AND" : "OR");
@@ -72,11 +74,11 @@ function AddFeaturedRowsForm({ mode }) {
   );
 
   const isPackageRow = form.type === "package" || form.type === "top10";
-  const isSubcategorySelection = form.type === "package" && packageMode === "subcategory";
+  const isSubcategorySelection = isPackageRow && packageMode === "subcategory";
   const categoryFilteringApplies = isSubcategorySelection;
   const currentList = isPackageRow
     ? isSubcategorySelection ? subcategories : packages
-    : parentCategories;
+    : packageMode === "name" ? categories : parentCategories;
 
   const codeOf = (item) => item.packageCode || item.code || item.categoryCode || item.id;
   const titleOf = (item) => item.title || item.name || item.categoryName || item.packageName;
@@ -104,6 +106,7 @@ function AddFeaturedRowsForm({ mode }) {
       title: form.title,
       type: form.type,
       visibleOn: form.visibleOn,
+      sequence: Number(form.sequence),
       packageMode,
       categoryMatchOperator,
       items: selectedItems.map((item) => ({
@@ -144,6 +147,17 @@ function AddFeaturedRowsForm({ mode }) {
           value={form.title}
           onChange={(e) => setForm({ ...form, title: e.target.value })}
         />
+        <input
+          className="frf-input"
+          type="number"
+          min="1"
+          step="1"
+          required
+          placeholder="Display sequence"
+          aria-label="Display sequence"
+          value={form.sequence}
+          onChange={(e) => setForm({ ...form, sequence: e.target.value })}
+        />
         <select
           className="frf-input"
           value={form.type}
@@ -160,7 +174,7 @@ function AddFeaturedRowsForm({ mode }) {
           <option value="category">Category Row</option>
         </select>
 
-        {form.type === "package" && (
+        {isPackageRow && (
           <select
             className="frf-input"
             value={packageMode}
@@ -179,6 +193,7 @@ function AddFeaturedRowsForm({ mode }) {
           >
             <option value="children">Store selected parent’s subcategories</option>
             <option value="parent">Show selected parent categories directly</option>
+            <option value="name">Legacy: preserve selected categories</option>
           </select>
         )}
 
