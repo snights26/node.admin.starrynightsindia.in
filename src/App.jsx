@@ -17,6 +17,7 @@ import CacheManagement from "./Admin/CacheManagement/CacheManagement";
 import AdministratorAccounts from "./Admin/AdministratorAccounts/AdministratorAccounts";
 import OccasionPopups from "./Admin/OccasionPopups/OccasionPopups";
 import CustomerSubmissions from "./Admin/CustomerSubmissions/CustomerSubmissions";
+import AppAnnouncements from "./Admin/AppAnnouncements/AppAnnouncements";
 
 import EnquiryList from "./Admin/Enquiry/EnquiryList";
 
@@ -252,6 +253,10 @@ function AppWrapper() {
         <Route
           path="/admin/customer-submissions"
           element={<ProtectedRoute superAdminOnly><CustomerSubmissions /></ProtectedRoute>}
+        />
+        <Route
+          path="/admin/app-announcements"
+          element={<ProtectedRoute superAdminOnly><AppAnnouncements /></ProtectedRoute>}
         />
 
         {/* ENQUIRY */}
