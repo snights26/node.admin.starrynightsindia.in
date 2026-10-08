@@ -13,6 +13,7 @@ const moduleSections = [
       "Administrator Accounts",
       "Customer Submissions",
       "App Announcements",
+      "App Releases",
       "Active Enquiry",
       "Payments",
       
@@ -56,6 +57,7 @@ function AdminModulesPanel() {
     "Administrator Accounts": "/admin/administrator-accounts",
     "Customer Submissions": "/admin/customer-submissions",
     "App Announcements": "/admin/app-announcements",
+    "App Releases": "/admin/app-releases",
     "Active Enquiry": "/admin/enquiry",
     "Payments": "/admin/payments",
     "Package": "/admin/packages",
@@ -83,7 +85,7 @@ function AdminModulesPanel() {
 
       {moduleSections.map((section, i) => {
         const visibleItems = section.items.filter((item) =>
-          !["Administrator Accounts", "Occasion Popups", "Customer Submissions", "App Announcements"].includes(item) || !operationsAdmin
+          !["Administrator Accounts", "Occasion Popups", "Customer Submissions", "App Announcements", "App Releases"].includes(item) || !operationsAdmin
         );
 
         return (

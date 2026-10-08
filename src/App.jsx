@@ -18,6 +18,7 @@ import AdministratorAccounts from "./Admin/AdministratorAccounts/AdministratorAc
 import OccasionPopups from "./Admin/OccasionPopups/OccasionPopups";
 import CustomerSubmissions from "./Admin/CustomerSubmissions/CustomerSubmissions";
 import AppAnnouncements from "./Admin/AppAnnouncements/AppAnnouncements";
+import AppReleases from "./Admin/AppReleases/AppReleases";
 
 import EnquiryList from "./Admin/Enquiry/EnquiryList";
 
@@ -257,6 +258,10 @@ function AppWrapper() {
         <Route
           path="/admin/app-announcements"
           element={<ProtectedRoute superAdminOnly><AppAnnouncements /></ProtectedRoute>}
+        />
+        <Route
+          path="/admin/app-releases"
+          element={<ProtectedRoute superAdminOnly><AppReleases /></ProtectedRoute>}
         />
 
         {/* ENQUIRY */}
