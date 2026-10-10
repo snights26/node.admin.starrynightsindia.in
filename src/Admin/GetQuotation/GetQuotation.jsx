@@ -574,34 +574,103 @@ export default function GetQuotation() {
   };
 
   const sendQuotationEmail = async () => {
-    const customerEmail = String(form.customerEmail || "").trim();
-    if (!EMAIL_PATTERN.test(customerEmail)) {
-      setEmailStatus({ type: "error", message: "Enter a valid customer email address before sending the quotation." });
-      return;
+  const customerEmail = String(form.customerEmail || "").trim();
+
+  if (!EMAIL_PATTERN.test(customerEmail)) {
+    setEmailStatus({
+      type: "error",
+      message: "Enter a valid customer email address before sending the quotation."
+    });
+    return;
+  }
+
+  setSendingEmail(true);
+  setEmailStatus(null);
+
+  try {
+    const { pdf, filename } = await buildQuotationPdf();
+    const pdfBlob = pdf.output("blob");
+
+    const packageName =
+      data?.heroTitle || data?.packageCode || "Travel Package";
+    const packageCode =
+      data?.packageCode || pkgId || "quotation";
+    const quotationBody = buildQuotationEmailBody();
+
+    const authorization = await api.post(
+      "/quotations/authorize-upload",
+      {
+        customerEmail,
+        packageName,
+        packageCode,
+        quotationBody,
+        filename,
+        contentType: "application/pdf",
+        size: pdfBlob.size
+      }
+    );
+
+    if (!authorization?.intent) {
+      throw new Error("Could not authorize the quotation upload.");
     }
 
-    setSendingEmail(true);
-    setEmailStatus(null);
-    try {
-      const { pdf, filename } = await buildQuotationPdf();
-      const formData = new FormData();
-      formData.append("customerEmail", customerEmail);
-      formData.append("packageName", data?.heroTitle || data?.packageCode || "Travel Package");
-      formData.append("packageCode", data?.packageCode || pkgId || "quotation");
-      formData.append("quotationBody", buildQuotationEmailBody());
-      formData.append("quotation", pdf.output("blob"), filename);
-      // Leave the multipart header to the browser/Axios so its required boundary is present.
-      await api.post("/quotations/email", formData);
-      setEmailStatus({ type: "success", message: `Quotation sent to ${customerEmail}.` });
-    } catch (error) {
-      setEmailStatus({
-        type: "error",
-        message: error.response?.data?.message || "Unable to send the quotation email. You can still download the PDF."
-      });
-    } finally {
-      setSendingEmail(false);
+    const upload = await api.post(
+      "/storage/uploads/presign",
+      { intent: authorization.intent }
+    );
+
+    if (!upload?.uploadUrl || !upload?.headers) {
+      throw new Error("Could not obtain the secure upload URL.");
     }
-  };
+
+    const uploadResponse = await fetch(upload.uploadUrl, {
+      method: "PUT",
+      headers: upload.headers,
+      body: pdfBlob
+    });
+
+    const uploadedObject = await uploadResponse.json().catch(() => null);
+
+    if (!uploadResponse.ok) {
+      throw new Error(
+        uploadedObject?.error?.message ||
+        uploadedObject?.message ||
+        "The quotation PDF could not be uploaded."
+      );
+    }
+
+    if (!uploadedObject?.url) {
+      throw new Error(
+        "Upload completed, but the storage URL was not returned."
+      );
+    }
+
+    await api.post("/quotations/finalize-upload", {
+      intent: authorization.intent,
+      url: uploadedObject.url,
+      customerEmail,
+      packageName,
+      packageCode,
+      quotationBody,
+      filename
+    });
+
+    setEmailStatus({
+      type: "success",
+      message: `Quotation sent to ${customerEmail}.`
+    });
+  } catch (error) {
+    setEmailStatus({
+      type: "error",
+      message:
+        error.response?.data?.message ||
+        error.message ||
+        "Unable to send the quotation email. You can still download the PDF."
+    });
+  } finally {
+    setSendingEmail(false);
+  }
+};
 
   return (
     <div className="quotation-container">
