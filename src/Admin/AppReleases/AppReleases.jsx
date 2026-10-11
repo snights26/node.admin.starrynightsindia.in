@@ -66,18 +66,23 @@ export default function AppReleases() {
         sha256(file),
         api.post("/admin/app-releases/android/authorize-upload", { fileName: file.name, contentType: file.type || "application/octet-stream", fileSize: file.size }),
       ]);
-      const uploadForm = new FormData();
-      Object.entries(authorization.formFields).forEach(([name, value]) => uploadForm.append(name, value));
-      uploadForm.append("file", file, file.name);
-      const uploadResponse = await fetch(authorization.uploadUrl, { method: "POST", body: uploadForm });
+      const presigned = await api.post("/storage/uploads/presign", { intent: authorization.intent });
+      const uploadResponse = await fetch(presigned.uploadUrl, {
+        method: "PUT",
+        headers: presigned.headers,
+        body: file,
+      });
       const upload = await uploadResponse.json().catch(() => ({}));
-      if (!uploadResponse.ok || upload.public_id !== authorization.publicId) throw new Error("Cloudinary could not confirm the APK upload.");
+      if (!uploadResponse.ok || typeof upload.url !== "string" || upload.pathname !== authorization.pathname) {
+        throw new Error("Vercel Blob could not confirm the APK upload.");
+      }
       const published = await api.post("/admin/app-releases/android/publish", {
         versionName: form.versionName.trim(),
         versionCode,
         releaseNotes: form.releaseNotes.trim() || null,
         fileName: file.name,
-        cloudinaryPublicId: upload.public_id,
+        uploadIntent: authorization.intent,
+        uploadedUrl: upload.url,
         sha256: digest,
       });
       setForm(emptyForm());
