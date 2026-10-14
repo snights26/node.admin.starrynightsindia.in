@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { FaAndroid, FaArrowLeft, FaDownload, FaFileUpload, FaTrashAlt } from "react-icons/fa";
+import { FaAndroid, FaArrowLeft, FaDownload, FaFileUpload, FaShieldAlt, FaTrashAlt } from "react-icons/fa";
 import api from "../../Utils/api";
 import "./AppReleases.css";
 
@@ -27,6 +27,7 @@ export default function AppReleases() {
   const [pending, setPending] = useState("");
   const [notice, setNotice] = useState("");
   const [error, setError] = useState("");
+  const [publicBlobPreflight, setPublicBlobPreflight] = useState(false);
 
   const current = useMemo(() => releases.find((release) => release.isActive) || null, [releases]);
   const inactive = useMemo(() => releases.filter((release) => !release.isActive), [releases]);
@@ -56,7 +57,7 @@ export default function AppReleases() {
     if (!Number.isSafeInteger(versionCode) || versionCode <= 0) { setError("Version Code must be a positive integer."); return; }
     if (current && versionCode <= Number(current.versionCode)) { setError(`Version Code must be greater than the current Version Code (${current.versionCode}).`); return; }
     const warning = current
-      ? `Current versionCode: ${current.versionCode}\nNew versionCode: ${versionCode}\n\nPublishing makes the new APK active. After verification, the previous APK and its release record are permanently removed.`
+      ? `Current versionCode: ${current.versionCode}\nNew versionCode: ${versionCode}\n\nPublishing makes the new APK active after it is verified. The previous APK and its release record are retained as inactive history.`
       : `New versionCode: ${versionCode}\n\nThis will create the first active Android release.`;
     if (!window.confirm(warning)) return;
 
@@ -76,7 +77,7 @@ export default function AppReleases() {
       if (!uploadResponse.ok || typeof upload.url !== "string" || upload.pathname !== authorization.pathname) {
         throw new Error("Vercel Blob could not confirm the APK upload.");
       }
-      const published = await api.post("/admin/app-releases/android/publish", {
+      await api.post("/admin/app-releases/android/publish", {
         versionName: form.versionName.trim(),
         versionCode,
         releaseNotes: form.releaseNotes.trim() || null,
@@ -86,9 +87,7 @@ export default function AppReleases() {
         sha256: digest,
       });
       setForm(emptyForm());
-      setNotice(published.cleanupPending
-        ? "New Android release is active. Previous-release cleanup is pending and can be retried below."
-        : "New Android release is active. The previous release was permanently removed.");
+      setNotice("New Android release is active. Previous releases were retained as inactive history.");
       await load();
     } catch (requestError) {
       setError(errorMessage(requestError, "Unable to upload and publish this Android release."));
@@ -98,7 +97,7 @@ export default function AppReleases() {
   };
 
   const deleteInactive = async (release) => {
-    if (!window.confirm(`Permanently delete versionCode ${release.versionCode} and its Cloudinary APK? This cannot be undone.`)) return;
+    if (!window.confirm(`Permanently delete versionCode ${release.versionCode} and its stored APK? This cannot be undone.`)) return;
     setPending(`delete-${release.id}`); setError(""); setNotice("");
     try {
       await api.delete(`/admin/app-releases/android/${release.id}`);
@@ -106,6 +105,36 @@ export default function AppReleases() {
       await load();
     } catch (requestError) {
       setError(errorMessage(requestError, "Unable to remove this inactive Android release."));
+    } finally {
+      setPending("");
+    }
+  };
+
+  const preflightPublicBlobMigration = async () => {
+    setPending("preflight-public-blob"); setError(""); setNotice("");
+    try {
+      await api.post("/admin/app-releases/android/migrate-v5-private-blob/preflight");
+      setPublicBlobPreflight(true);
+      setNotice("Public Blob authorization is verified. The signed SN2 APK is ready for the guarded migration.");
+    } catch (requestError) {
+      setPublicBlobPreflight(false);
+      setError(errorMessage(requestError, "Unable to verify Public Blob authorization."));
+    } finally {
+      setPending("");
+    }
+  };
+
+  const migrateSn2V5ToPublicBlob = async () => {
+    if (!publicBlobPreflight) { setError("Verify Public Blob authorization before migrating the APK."); return; }
+    if (!window.confirm("Copy the verified signed SN2/versionCode 5 APK to Public Blob and update only its existing active release URL? The private source and every release record will be retained.")) return;
+    setPending("migrate-public-blob"); setError(""); setNotice("");
+    try {
+      const result = await api.post("/admin/app-releases/android/migrate-v5-private-blob", { confirmation: "MIGRATE_SN2_VERSION_CODE_5_TO_PUBLIC_BLOB" });
+      setPublicBlobPreflight(false);
+      setNotice(`Public APK verified: ${formatFileSize(result?.verification?.fileSize)} · SHA-256 matched. The existing SN2/versionCode 5 release URL is now public.`);
+      await load();
+    } catch (requestError) {
+      setError(errorMessage(requestError, "The protected APK migration did not complete. The active release was not changed after a failed verification."));
     } finally {
       setPending("");
     }
@@ -132,6 +161,15 @@ export default function AppReleases() {
       {current ? <a className="release-download" href={current.downloadUrl} target="_blank" rel="noreferrer"><FaDownload /> Download current APK</a> : null}
     </section>
 
+    {current?.versionName === "SN2" && Number(current.versionCode) === 5 ? <section className="release-card release-migration" aria-labelledby="release-migration-title">
+      <div className="release-card-title"><FaShieldAlt /><div><span>Approved APK repair</span><h2 id="release-migration-title">Move the existing signed SN2 APK to Public Blob</h2></div></div>
+      <p className="release-muted">This guarded one-time operation verifies the approved checksum and file size, streams the existing private APK without modifying it, verifies an anonymous public download, then updates only the current release URL. No version, signing identity, Blob source, or release record is deleted.</p>
+      <div className="release-actions release-migration__actions">
+        <button type="button" className="release-secondary" disabled={Boolean(pending)} onClick={preflightPublicBlobMigration}><FaShieldAlt /> {pending === "preflight-public-blob" ? "Verifying authorization…" : "Verify Public Blob authorization"}</button>
+        <button type="button" className="release-primary" disabled={!publicBlobPreflight || Boolean(pending)} onClick={migrateSn2V5ToPublicBlob}><FaDownload /> {pending === "migrate-public-blob" ? "Verifying & migrating…" : "Verify and migrate SN2 v5"}</button>
+      </div>
+    </section> : null}
+
     <section className="release-card" aria-labelledby="upload-release-title">
       <div className="release-card-title"><FaFileUpload /><div><span>Upload new Android version</span><h2 id="upload-release-title">Publish a replacement APK</h2></div></div>
       <p className="release-muted">Suggested next Version Code: <strong>{suggestedVersionCode}</strong>. You must enter the Version Name, Version Code, and release notes manually.</p>
@@ -143,6 +181,6 @@ export default function AppReleases() {
       </form>
     </section>
 
-    {inactive.length ? <section className="release-card release-history" aria-labelledby="release-history-title"><div className="release-card-title"><FaTrashAlt /><div><span>Cleanup required</span><h2 id="release-history-title">Inactive Android releases</h2></div></div><p className="release-muted">These rows exist only when a previous Cloudinary cleanup could not finish. Retrying permanently deletes the old APK and metadata.</p><div className="release-history-list">{inactive.map((release) => <div key={release.id} className="release-history-item"><span>Version {release.versionName} · Code {release.versionCode}</span><button type="button" className="release-danger" disabled={Boolean(pending)} onClick={() => deleteInactive(release)}>{pending === `delete-${release.id}` ? "Removing…" : "Retry permanent removal"}</button></div>)}</div></section> : null}
+    {inactive.length ? <section className="release-card release-history" aria-labelledby="release-history-title"><div className="release-card-title"><FaTrashAlt /><div><span>Release history</span><h2 id="release-history-title">Previous Android releases</h2></div></div><p className="release-muted">Previous releases are retained for rollback and migration safety. Permanently remove one only after explicit retention approval.</p><div className="release-history-list">{inactive.map((release) => <div key={release.id} className="release-history-item"><span>Version {release.versionName} · Code {release.versionCode}</span><button type="button" className="release-danger" disabled={Boolean(pending)} onClick={() => deleteInactive(release)}>{pending === `delete-${release.id}` ? "Removing…" : "Permanently remove"}</button></div>)}</div></section> : null}
   </main>;
 }
