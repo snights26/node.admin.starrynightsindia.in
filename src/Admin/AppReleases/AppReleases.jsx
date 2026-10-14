@@ -28,6 +28,7 @@ export default function AppReleases() {
   const [notice, setNotice] = useState("");
   const [error, setError] = useState("");
   const [publicBlobPreflight, setPublicBlobPreflight] = useState(false);
+  const [migrationConfirmation, setMigrationConfirmation] = useState(false);
 
   const current = useMemo(() => releases.find((release) => release.isActive) || null, [releases]);
   const inactive = useMemo(() => releases.filter((release) => !release.isActive), [releases]);
@@ -126,11 +127,11 @@ export default function AppReleases() {
 
   const migrateSn2V5ToPublicBlob = async () => {
     if (!publicBlobPreflight) { setError("Verify Public Blob authorization before migrating the APK."); return; }
-    if (!window.confirm("Copy the verified signed SN2/versionCode 5 APK to Public Blob and update only its existing active release URL? The private source and every release record will be retained.")) return;
     setPending("migrate-public-blob"); setError(""); setNotice("");
     try {
       const result = await api.post("/admin/app-releases/android/migrate-v5-private-blob", { confirmation: "MIGRATE_SN2_VERSION_CODE_5_TO_PUBLIC_BLOB" });
       setPublicBlobPreflight(false);
+      setMigrationConfirmation(false);
       setNotice(`Public APK verified: ${formatFileSize(result?.verification?.fileSize)} · SHA-256 matched. The existing SN2/versionCode 5 release URL is now public.`);
       await load();
     } catch (requestError) {
@@ -166,7 +167,7 @@ export default function AppReleases() {
       <p className="release-muted">This guarded one-time operation verifies the approved checksum and file size, streams the existing private APK without modifying it, verifies an anonymous public download, then updates only the current release URL. No version, signing identity, Blob source, or release record is deleted.</p>
       <div className="release-actions release-migration__actions">
         <button type="button" className="release-secondary" disabled={Boolean(pending)} onClick={preflightPublicBlobMigration}><FaShieldAlt /> {pending === "preflight-public-blob" ? "Verifying authorization…" : "Verify Public Blob authorization"}</button>
-        <button type="button" className="release-primary" disabled={!publicBlobPreflight || Boolean(pending)} onClick={migrateSn2V5ToPublicBlob}><FaDownload /> {pending === "migrate-public-blob" ? "Verifying & migrating…" : "Verify and migrate SN2 v5"}</button>
+        {!migrationConfirmation ? <button type="button" className="release-primary" disabled={!publicBlobPreflight || Boolean(pending)} onClick={() => setMigrationConfirmation(true)}><FaDownload /> Verify and migrate SN2 v5</button> : <span className="release-migration__confirm"><span>Ready to copy the signed APK and update only its existing URL.</span><button type="button" className="release-secondary" disabled={Boolean(pending)} onClick={() => setMigrationConfirmation(false)}>Cancel</button><button type="button" className="release-primary" disabled={Boolean(pending)} onClick={migrateSn2V5ToPublicBlob}><FaDownload /> {pending === "migrate-public-blob" ? "Verifying & migrating…" : "Confirm migration"}</button></span>}
       </div>
     </section> : null}
 
